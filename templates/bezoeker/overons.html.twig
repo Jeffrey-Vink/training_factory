@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="card-body">
+        <div class="container">
+            <h3 class="display-5">Over ons</h3>
+            <iframe class="col-md-5 col-12 float-right p-0 m-0" height="400px" id="gmap_canvas" frameborder="0"
+                    src="https://maps.google.com/maps?q=Tinwerf%2014&t=&z=13&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+            <table class="table table-hover table-striped col-md-7 p-0 m-0">
+                <thead>
+                    <tr>
+                        <td>Dag</td>
+                        <td>Opent</td>
+                        <td>Sluit</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Maandag</td>
+                        <td>09:00</td>
+                        <td>22:00</td>
+                    </tr>
+                    <tr>
+                        <td>Dinsdag</td>
+                        <td>10:00</td>
+                        <td>22:00</td>
+                    </tr>
+                    <tr>
+                        <td>Woensdag</td>
+                        <td>09:00</td>
+                        <td>21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Donderdag</td>
+                        <td>09:00</td>
+                        <td>22:00</td>
+                    </tr>
+                    <tr>
+                        <td>Vrijdag</td>
+                        <td>08:00</td>
+                        <td>00:00</td>
+                    </tr>
+                    <tr>
+                        <td>Zaterdag</td>
+                        <td>12:00</td>
+                        <td>20:00</td>
+                    </tr>
+                    <tr>
+                        <td>Zondag</td>
+                        <td>Gesloten</td>
+                        <td>Gesloten</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

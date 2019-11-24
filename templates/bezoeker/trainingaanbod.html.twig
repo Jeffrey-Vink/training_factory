@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {{ parent() }}
+    <div class="card-group">
+        {% for training in trainingen %}
+            <div class="card col-md-4 col-12 p-0">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ training.naam }}</h5>
+                    <p class="card-text">{{ training.description|markdown }}</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">&euro;{{ training.costs }} per sessie.</small>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

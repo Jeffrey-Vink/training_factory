@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+    {% endblock %}
+</head>
+<body class="bg-light">
+{% block body %}
+    {% block header %}
+        <div class="container-fluid shadow-sm">
+            <div class="container" id="header">
+                <h1 class="display-4 float-left">Training Factory<br>Den Haag</h1>
+                <span class="clearfix"></span>
+            </div>
+            <hr class="m-0 p-0">
+            {% block nav %}
+                <nav class="container navbar navbar-expand-lg navbar-light bg-light py-1">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item mr-2">
+                                <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="{{ path('homepage') }}">Home</a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="{{ path('training_aanbod') }}">Training aanbod</a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="">Lid worden</a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="{{ path('gedragsregels') }}">Gedragsregels</a>
+                            </li>
+                            <li class="nav-item mr-2">
+                                <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="{{ path('over_ons') }}">Lokatie & contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            {% endblock %}
+        </div>
+    {% endblock %}
+    <div class="container card p-0 my-3">
+        {% block card %}
+            <div class="card-header p-0 shadow-md">
+                <div class="row">
+                    <img class="img col-4 p-0" src="{{ asset('img/Stootzak training.jpg') }}" alt="">
+                    <img class="img col-4 p-0" src="{{ asset('img/Kickboksen.jpg') }}" alt="">
+                    <img class="img col-4 p-0" src="{{ asset('img/MMA.jpg') }}" alt="">
+                </div>
+            </div>
+            {% block content %}
+
+            {% endblock %}
+        {% endblock %}
+    </div>
+    <footer class="container-fluid bg-dark py-4">
+        {% block footer %}
+            <div class="container text-center">
+                <p>Training Factory Den Haag - 010 319 2487</p>
+                <p class="text-white m-0">developed by NewApps</p>
+            </div>
+        {% endblock %}
+    </footer>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>
