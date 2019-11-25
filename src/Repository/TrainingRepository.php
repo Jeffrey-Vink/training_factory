@@ -19,9 +19,31 @@ class TrainingRepository extends ServiceEntityRepository
         parent::__construct($registry, Training::class);
     }
 
+//    public function getTraining($naam)
+//    {
+//        $em = $this->getEntityManager();
+//        $query = $em->createQuery("SELECT b FROM AppBundle:Training b WHERE b.naam=:naam");
+//        $query->setParameter('naam', $naam);
+//        //var_dump($query->getResult()); die;
+//        $result = $query->getResult();
+//
+//        return $result;
+//    }
+//
+//    public function getAllTrainingen()
+//    {
+//        $em = $this->getEntityManager();
+//        $query = $em->createQuery("SELECT * FROM AppBundle:Training");
+//        //var_dump($query->getResult()); die;
+//        $result = $query->getResult();
+//
+//        return $result;
+//    }
+
     // /**
     //  * @return Training[] Returns an array of Training objects
     //  */
+
     /*
     public function findByExampleField($value)
     {
@@ -33,8 +55,7 @@ class TrainingRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
-    }
-    */
+    }*/
 
     /*
     public function findOneBySomeField($value): ?Training
