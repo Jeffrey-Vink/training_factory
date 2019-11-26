@@ -56,7 +56,7 @@ class MedewerkerController extends AbstractController
             $em->persist($training);
             $em->flush();
 
-            $this->addFlash('success', 'Article Updated! Inaccuracies squashed!');
+            $this->addFlash('success', 'Training succesvol geupdatet!');
 
             return $this->redirectToRoute('medewerker_trainingen');
         }
