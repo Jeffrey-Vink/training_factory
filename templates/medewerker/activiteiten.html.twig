@@ -2,36 +2,25 @@
 {% block content %}
     {{ parent() }}
     <div class="card-group">
-        <table>
+        <table class="table table-bordered table-hover table-gray">
             <thead>
                 <tr>
-                    <td></td>
                     <td>Naam</td>
                     <td>Kosten</td>
-                    <td></td>
+                    <td>Bewerk</td>
                 </tr>
             </thead>
             <tbody>
             {% for training in trainingen %}
                 <tr>
-                    <td></td>
                     <td>{{ training.naam }}</td>
                     <td>&euro;{{ training.costs }}</td>
-                    <td></td>
+                    <td><a href="{{ path('medewerker_training_edit', {
+                            training: training.id
+                        }) }}" class="btn btn-outline-primary btn-sm text-black">Bewerk</a></td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
-        {% for training in trainingen %}
-            <div class="card col-md-4 col-12 p-0">
-                <div class="card-body">
-                    <h5 class="card-title text-center">{{ training.naam }}</h5>
-                    <p class="card-text">{{ training.description|markdown }}</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">&euro;{{ training.costs }} per sessie.</small>
-                </div>
-            </div>
-        {% endfor %}
     </div>
 {% endblock %}

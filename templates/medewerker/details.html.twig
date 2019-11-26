@@ -1,3 +1,31 @@
-{% block stylesheets %}{% endblock %}
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block nav %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <div class="card-body">
+        {{ form_start(trainingForm) }}
+            {{ form_row(trainingForm.naam, {
+                label: 'Article title',
+            }) }}
+            {{ form_row(trainingForm.description) }}
+            {{ form_row(trainingForm.duration) }}
+            {{ form_row(trainingForm.costs) }}
+            {{ form_row(trainingForm.imageFile) }}
+        {{ form_end(trainingForm) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
