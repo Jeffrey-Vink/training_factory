@@ -1,23 +1,26 @@
 {% extends 'base.html.twig' %}
 {% block content %}
     {{ parent() }}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success col-12 text-center">
+            {{ message }}
+        </div>
+    {% endfor %}
     <div class="card-group">
         <table class="table table-bordered table-hover table-gray">
             <thead>
-                <tr>
-                    <td>Naam</td>
-                    <td>Kosten</td>
-                    <td>Bewerk</td>
-                </tr>
+            <tr>
+                <td>Naam</td>
+                <td>Kosten</td>
+                <td>Bewerk</td>
+            </tr>
             </thead>
             <tbody>
             {% for training in trainingen %}
                 <tr>
                     <td>{{ training.naam }}</td>
                     <td>&euro;{{ training.costs }}</td>
-                    <td><a href="{{ path('medewerker_training_edit', {
-                            training: training.id
-                        }) }}" class="btn btn-outline-primary btn-sm text-black">Bewerk</a></td>
+                    <td><a href="{% set imagePath = 'uploads/' ~ image %}{{ asset(imagePath) }}" class="btn btn-outline-primary btn-sm text-black">Bewerk</a></td>
                 </tr>
             {% endfor %}
             </tbody>

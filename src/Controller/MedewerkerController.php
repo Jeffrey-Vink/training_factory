@@ -44,14 +44,16 @@ class MedewerkerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['imageFile']->getData();
-            $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
-            $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-            $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
-            $uploadedFile->move(
-                $destination,
-                $newFilename
-            );
-            $training->setImageFilename($newFilename);
+            if($uploadedFile){
+                $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
+                $uploadedFile->move(
+                    $destination,
+                    $newFilename
+                );
+                $training->setImageFilename($newFilename);
+            }
 
             $em->persist($training);
             $em->flush();
@@ -62,6 +64,7 @@ class MedewerkerController extends AbstractController
         }
         return $this->render('medewerker/details.html.twig', [
             'trainingForm' => $form->createView(),
+            'image' => $training->getImageFilename(),
         ]);
     }
 }

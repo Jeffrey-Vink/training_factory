@@ -38,7 +38,7 @@ class BezoekerController extends AbstractController
     public function trainingAanbod(EntityManagerInterface $em)
     {
         $repository = $em->getRepository(Training::class);
-        /** @var trainingen Training */
+        /** @var Training $trainingen */
         $trainingen = $repository->findAll();
 
         return $this->render('bezoeker/trainingaanbod.html.twig', [
