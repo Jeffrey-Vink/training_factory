@@ -19,22 +19,35 @@ class UserRegistrationType extends AbstractType
     {
         $builder
             ->setMethod('POST')
-            ->add('loginName', TextType::class)
-            ->add('password', PasswordType::class)
-            ->add('firstName', TextType::class)
+            ->add('loginName', TextType::class, [
+                'label' => 'Gebruikersnaam',
+                ])
+            ->add('password', PasswordType::class, [
+                'label' => 'Wachtwoord',
+                ])
+            ->add('firstName', TextType::class, [
+                'label' => 'Voornaam',
+                ])
             ->add('prePosition', TextType::class, [
                 'label' => 'Tussenvoegsel',
                 'required' => false,
             ])
-            ->add('lastName', TextType::class)
-            ->add('dateOfBirth', BirthdayType::class)
+            ->add('lastName', TextType::class, [
+                'label' => 'Achternaam',
+                ])
+            ->add('dateOfBirth', BirthdayType::class, [
+                'label' => 'Geboortedatum',
+                ])
             ->add('gender', ChoiceType::class, [
+                'label' => 'Geslacht',
                 'choices' => [
                     'Man' => 'man',
                     'Vrouw' => 'vrouw',
                 ]
             ])
-            ->add('emailAddress', TextType::class)
+            ->add('emailAddress', TextType::class, [
+                'label' => 'E-mail',
+                ])
             ->add('submit', SubmitType::class, [
                 'label' => 'register',
             ]);

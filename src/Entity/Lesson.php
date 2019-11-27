@@ -151,9 +151,4 @@ class Lesson
 
         return $this;
     }
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Training", cascade={"persist"})
-     */
-    protected $tags;
 }

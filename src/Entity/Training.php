@@ -148,10 +148,4 @@ class Training
 
         return $this;
     }
-
-    public function addTag(Lesson $tag)
-    {
-        // for a many-to-one association:
-        $tag->setTraining($this);
-    }
 }

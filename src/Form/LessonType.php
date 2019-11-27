@@ -22,6 +22,7 @@ class LessonType extends AbstractType
                 'entry_type' => TrainingType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' => true,
+                'by_reference' => false,
             ])
             ->add('instructor', IntegerType::class)
         ;

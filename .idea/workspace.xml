@@ -2,68 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/jeffross-5dddbf036bc81.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/vutl0qyg8a111-5ddd7abee7b89.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/LoginType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191126211049.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/activiteiten.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/add.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/beheer.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/details.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/training/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/training/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/training/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/beheerder/training/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/deelnemer/navigatie.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/deelnemers_lijst.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/les_lijst.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/les_plannen.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/les_wijzigen.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/navigatie.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/training_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/training_factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/download-5ddcdde2b44e0.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/download-5ddcde228bce7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/download-5ddcde47daada.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Person.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Registration.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Training.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Training.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191123002116.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191123004057.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191126022711.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191126075143.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/registreren.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/registreren.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/beheerder_navigatie" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/navigatie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/details.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,6 +190,7 @@
       <workItem from="1574727848765" duration="8178000" />
       <workItem from="1574751757353" duration="978000" />
       <workItem from="1574754351235" duration="9493000" />
+      <workItem from="1574838208732" duration="579000" />
     </task>
     <servers />
   </component>
