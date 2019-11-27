@@ -32,7 +32,7 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/new", name="training_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function newAction(Request $request): Response
     {
         $training = new Training();
         $form = $this->createForm(TrainingType::class, $training);
@@ -55,7 +55,7 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/{id}", name="training_show", methods={"GET"})
      */
-    public function show(Training $training): Response
+    public function showAction(Training $training): Response
     {
         return $this->render('beheerder/training/show.html.twig', [
             'training' => $training,
@@ -65,7 +65,7 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/{id}/edit", name="training_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Training $training, EntityManagerInterface $em): Response
+    public function editAction(Request $request, Training $training, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(TrainingType::class, $training);
         $form->handleRequest($request);
@@ -98,7 +98,7 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/{id}", name="training_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Training $training): Response
+    public function deleteAction(Request $request, Training $training): Response
     {
         if ($this->isCsrfTokenValid('delete'.$training->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();

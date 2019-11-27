@@ -38,7 +38,7 @@ class BezoekerController extends AbstractController
     /**
      * @Route("aanbod", name="training_aanbod")
      */
-    public function trainingAanbod(EntityManagerInterface $em)
+    public function trainingAanbodAction(EntityManagerInterface $em)
     {
         $repository = $em->getRepository(Training::class);
         /** @var Training $trainingen */

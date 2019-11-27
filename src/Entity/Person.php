@@ -28,7 +28,7 @@ class Person implements UserInterface
      */
     public function getRoles()
     {
-        return ['Admin', 'Trainer', 'Lid'];
+        return ['ROLE_USER' => $this->getPsnType()];
     }
 
     /**
