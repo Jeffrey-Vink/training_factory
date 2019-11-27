@@ -5,12 +5,65 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PersonRepository")
  */
-class Person
+class Person implements UserInterface
 {
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
+    {
+        return ['Admin', 'Trainer', 'Lid'];
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        return null;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->getLoginName();
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -19,7 +72,7 @@ class Person
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100, unique=true)
+     * @ORM\Column(type="string", length=100)
      */
     private $loginName;
 
@@ -34,9 +87,9 @@ class Person
     private $firstName;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", nullable=true)
      */
-    private $preProvision;
+    private $prePosition;
 
     /**
      * @ORM\Column(type="string", length=100)
@@ -91,17 +144,17 @@ class Person
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Lesson", mappedBy="instructor")
      */
-    private $instructors;
+    private $lessons;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="member")
+     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="member", orphanRemoval=true)
      */
-    private $members;
+    private $registrations;
 
     public function __construct()
     {
-        $this->instructors = new ArrayCollection();
-        $this->members = new ArrayCollection();
+        $this->lessons = new ArrayCollection();
+        $this->registrations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -145,14 +198,14 @@ class Person
         return $this;
     }
 
-    public function getPreProvision(): ?float
+    public function getPrePosition(): ?string
     {
-        return $this->preProvision;
+        return $this->prePosition;
     }
 
-    public function setPreProvision(float $preProvision): self
+    public function setPrePosition(string $prePosition): self
     {
-        $this->preProvision = $preProvision;
+        $this->prePosition = $prePosition;
 
         return $this;
     }
@@ -280,28 +333,28 @@ class Person
     /**
      * @return Collection|Lesson[]
      */
-    public function getInstructors(): Collection
+    public function getLessons(): Collection
     {
-        return $this->instructors;
+        return $this->lessons;
     }
 
-    public function addInstructor(Lesson $instructor): self
+    public function addLesson(Lesson $lesson): self
     {
-        if (!$this->instructors->contains($instructor)) {
-            $this->instructors[] = $instructor;
-            $instructor->setInstructor($this);
+        if (!$this->lessons->contains($lesson)) {
+            $this->lessons[] = $lesson;
+            $lesson->setInstructor($this);
         }
 
         return $this;
     }
 
-    public function removeInstructor(Lesson $instructor): self
+    public function removeLesson(Lesson $lesson): self
     {
-        if ($this->instructors->contains($instructor)) {
-            $this->instructors->removeElement($instructor);
+        if ($this->lessons->contains($lesson)) {
+            $this->lessons->removeElement($lesson);
             // set the owning side to null (unless already changed)
-            if ($instructor->getInstructor() === $this) {
-                $instructor->setInstructor(null);
+            if ($lesson->getInstructor() === $this) {
+                $lesson->setInstructor(null);
             }
         }
 
@@ -311,28 +364,28 @@ class Person
     /**
      * @return Collection|Registration[]
      */
-    public function getMembers(): Collection
+    public function getRegistrations(): Collection
     {
-        return $this->members;
+        return $this->registrations;
     }
 
-    public function addMember(Registration $member): self
+    public function addRegistration(Registration $registration): self
     {
-        if (!$this->members->contains($member)) {
-            $this->members[] = $member;
-            $member->setMember($this);
+        if (!$this->registrations->contains($registration)) {
+            $this->registrations[] = $registration;
+            $registration->setMember($this);
         }
 
         return $this;
     }
 
-    public function removeMember(Registration $member): self
+    public function removeRegistration(Registration $registration): self
     {
-        if ($this->members->contains($member)) {
-            $this->members->removeElement($member);
+        if ($this->registrations->contains($registration)) {
+            $this->registrations->removeElement($registration);
             // set the owning side to null (unless already changed)
-            if ($member->getMember() === $this) {
-                $member->setMember(null);
+            if ($registration->getMember() === $this) {
+                $registration->setMember(null);
             }
         }
 

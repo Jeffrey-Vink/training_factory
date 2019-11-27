@@ -39,7 +39,7 @@ class Training
     private $costs;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Lesson", mappedBy="training")
+     * @ORM\OneToMany(targetEntity="App\Entity\Lesson", mappedBy="training", orphanRemoval=true)
      */
     private $lessons;
 
@@ -147,5 +147,11 @@ class Training
         $this->imageFilename = $imageFilename;
 
         return $this;
+    }
+
+    public function addTag(Lesson $tag)
+    {
+        // for a many-to-one association:
+        $tag->setTraining($this);
     }
 }

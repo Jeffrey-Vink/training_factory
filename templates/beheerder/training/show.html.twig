@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <div class="container card-body">
+        <h1>Training</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ training.id }}</td>
+            </tr>
+            <tr>
+                <th>Naam</th>
+                <td>{{ training.naam }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ training.description|markdown }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ training.duration }}</td>
+            </tr>
+            <tr>
+                <th>Costs</th>
+                <td>{{ training.costs }}</td>
+            </tr>
+            <tr>
+                <th>ImageFilename</th>
+                <td>{{ training.imageFilename }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('admin_training_index') }}">back to list</a>
+
+        <a href="{{ path('admin_training_edit', {'id': training.id}) }}">edit</a>
+
+        {{ include('beheerder/training/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

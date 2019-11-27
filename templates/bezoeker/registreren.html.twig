@@ -1,3 +1,10 @@
-{% block stylesheets %}{% endblock %}
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {{ parent() }}
+    <div class="card container">
+        {{ form_start(form) }}
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

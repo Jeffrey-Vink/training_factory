@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Lesson{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <div class="container card-body">
+        <h1>Create new Lesson</h1>
+
+        {{ include('medewerker/lesson/_form.html.twig') }}
+
+        <a href="{{ path('medewerker_lesson_index') }}">back to list</a>
+    </div>
+{% endblock %}

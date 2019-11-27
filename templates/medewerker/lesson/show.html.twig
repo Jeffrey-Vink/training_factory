@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lesson{% endblock %}
+
+{% block content %}
+    {{ parent() }}
+    <div class="container card-body">
+        <h1>Lesson</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lesson.id }}</td>
+            </tr>
+            <tr>
+                <th>DateTime</th>
+                <td>{{ lesson.dateTime ? lesson.dateTime|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ lesson.location }}</td>
+            </tr>
+            <tr>
+                <th>MaxPersons</th>
+                <td>{{ lesson.maxPersons }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('medewerker_lesson_index') }}">back to list</a>
+
+        <a href="{{ path('medewerker_lesson_edit', {'id': lesson.id}) }}">edit</a>
+
+        {{ include('medewerker/lesson/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

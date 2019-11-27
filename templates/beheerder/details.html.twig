@@ -1,6 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
 {% block nav %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
     {{ parent() }}
 {% endblock %}
 
@@ -21,4 +29,8 @@
             {{ form_row(trainingForm.imageFile) }}
         {{ form_end(trainingForm) }}
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
 {% endblock %}

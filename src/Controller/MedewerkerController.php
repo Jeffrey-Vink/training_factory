@@ -1,70 +1,94 @@
 <?php
 namespace App\Controller;
-use App\Entity\Training;
-use App\Form\TrainingType;
-use Doctrine\ORM\EntityManagerInterface;
-use Gedmo\Sluggable\Util\Urlizer;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use App\Entity\Lesson;
+use App\Form\LessonType;
+use App\Repository\LessonRepository;
 use \Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class MedewerkerController
+ * @package App\Controller
+ * @Route("/medewerker", name="medewerker_")
+ */
 class MedewerkerController extends AbstractController
 {
     /**
-     * @Route("/admin", name="medewerker_home")
+     * @Route("/", name="lesson_index", methods={"GET"})
      */
-    public function homepagina()
+    public function index(LessonRepository $lessonRepository): Response
     {
-        return $this->render('base.html.twig');
-    }
-
-    /**
-     * @Route("/admin/trainingen", name="medewerker_trainingen")
-     */
-    public function trainingAanbod(EntityManagerInterface $em)
-    {
-        $repository = $em->getRepository(Training::class);
-        /** @var trainingen Training */
-        $trainingen = $repository->findAll();
-
-        return $this->render('medewerker/activiteiten.html.twig', [
-            'trainingen' => $trainingen,
+        return $this->render('medewerker/lesson/index.html.twig', [
+            'lessons' => $lessonRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/admin/training/{training}/edit", name="medewerker_training_edit")
+     * @Route("/new", name="lesson_new", methods={"GET","POST"})
      */
-    public function trainingEditAction(Training $training, Request $request, EntityManagerInterface $em)
+    public function new(Request $request): Response
     {
-        $form = $this->createForm(TrainingType::class, $training);
-
+        $lesson = new Lesson();
+        $form = $this->createForm(LessonType::class, $lesson);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $uploadedFile */
-            $uploadedFile = $form['imageFile']->getData();
-            if($uploadedFile){
-                $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
-                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
-                $uploadedFile->move(
-                    $destination,
-                    $newFilename
-                );
-                $training->setImageFilename($newFilename);
-            }
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($lesson);
+            $entityManager->flush();
 
-            $em->persist($training);
-            $em->flush();
-
-            $this->addFlash('success', 'Training succesvol geupdatet!');
-
-            return $this->redirectToRoute('medewerker_trainingen');
+            return $this->redirectToRoute('medewerker_lesson_index');
         }
-        return $this->render('medewerker/details.html.twig', [
-            'trainingForm' => $form->createView(),
-            'image' => $training->getImageFilename(),
+
+        return $this->render('medewerker/lesson/new.html.twig', [
+            'lesson' => $lesson,
+            'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/{id}", name="lesson_show", methods={"GET"})
+     */
+    public function show(Lesson $lesson): Response
+    {
+        return $this->render('medewerker/lesson/show.html.twig', [
+            'lesson' => $lesson,
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/edit", name="lesson_edit", methods={"GET","POST"})
+     */
+    public function edit(Request $request, Lesson $lesson): Response
+    {
+        $form = $this->createForm(LessonType::class, $lesson);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('medewerker_lesson_index');
+        }
+
+        return $this->render('medewerker/lesson/edit.html.twig', [
+            'lesson' => $lesson,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}", name="lesson_delete", methods={"DELETE"})
+     */
+    public function delete(Request $request, Lesson $lesson): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$lesson->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($lesson);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('medewerker_lesson_index');
     }
 }

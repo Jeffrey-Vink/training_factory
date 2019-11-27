@@ -14,6 +14,8 @@
         "symfony/form": "4.4.*",
         "symfony/framework-bundle": "4.4.*",
         "symfony/orm-pack": "^1.0",
+        "symfony/security-bundle": "4.4.*",
+        "symfony/security-csrf": "4.4.*",
         "symfony/twig-bundle": "4.4.*",
         "symfony/validator": "4.4.*",
         "symfony/yaml": "4.4.*",
@@ -27,6 +29,7 @@
         "symfony/flex": "^1.4",
         "symfony/maker-bundle": "^1.14",
         "symfony/monolog-bundle": "^3.0",
+        "symfony/profiler-pack": "^1.0",
         "symfony/var-dumper": "*",
         "symfony/web-server-bundle": "4.4.*",
         "twig/extensions": "^1.5"

@@ -1,7 +1,10 @@
 <?php
 namespace App\Controller;
+use App\Entity\Person;
 use App\Entity\Training;
+use App\Form\UserRegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Michelf\MarkdownInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -43,6 +46,29 @@ class BezoekerController extends AbstractController
 
         return $this->render('bezoeker/trainingaanbod.html.twig', [
             'trainingen' => $trainingen,
+        ]);
+    }
+
+    /**
+     * @Route("registreer", name="bezoeker_registreer")
+     */
+    public function registerAction(Request $request, EntityManagerInterface $em)
+    {
+        $form = $this->createForm(UserRegistrationType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $repository = $em->getRepository(Person::class);
+            $person = $form->getData();
+
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($person);
+            $em->flush();
+
+            return $this->render('bezoeker/index.html.twig');
+        }
+        return $this->render('bezoeker/registreren.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 }

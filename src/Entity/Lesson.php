@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use App\Form\LessonType;
+use App\Form\TrainingType;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -40,19 +42,18 @@ class Lesson
     private $training;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="instructors")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="lessons")
      */
     private $instructor;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="lesson")
+     * @ORM\OneToMany(targetEntity="App\Entity\Registration", mappedBy="lesson", orphanRemoval=true)
      */
-    private $lessons;
+    private $registrations;
 
     public function __construct()
     {
-        $this->lessons = new ArrayCollection();
+        $this->registrations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -123,31 +124,36 @@ class Lesson
     /**
      * @return Collection|Registration[]
      */
-    public function getLessons(): Collection
+    public function getRegistrations(): Collection
     {
-        return $this->lessons;
+        return $this->registrations;
     }
 
-    public function addLesson(Registration $lesson): self
+    public function addRegistration(Registration $registration): self
     {
-        if (!$this->lessons->contains($lesson)) {
-            $this->lessons[] = $lesson;
-            $lesson->setLesson($this);
+        if (!$this->registrations->contains($registration)) {
+            $this->registrations[] = $registration;
+            $registration->setLesson($this);
         }
 
         return $this;
     }
 
-    public function removeLesson(Registration $lesson): self
+    public function removeRegistration(Registration $registration): self
     {
-        if ($this->lessons->contains($lesson)) {
-            $this->lessons->removeElement($lesson);
+        if ($this->registrations->contains($registration)) {
+            $this->registrations->removeElement($registration);
             // set the owning side to null (unless already changed)
-            if ($lesson->getLesson() === $this) {
-                $lesson->setLesson(null);
+            if ($registration->getLesson() === $this) {
+                $registration->setLesson(null);
             }
         }
 
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Training", cascade={"persist"})
+     */
+    protected $tags;
 }
