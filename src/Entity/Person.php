@@ -28,7 +28,9 @@ class Person implements UserInterface
      */
     public function getRoles()
     {
-        return ['ROLE_USER' => $this->getPsnType()];
+        $roles = $this->getPsnType();
+        $roles = ['ROLE_USER'];
+        return $roles;
     }
 
     /**
@@ -112,7 +114,7 @@ class Person implements UserInterface
     private $emailAddress;
 
     /**
-     * @ORM\Column(type="string", length=3)
+     * @ORM\Column(type="json_array")
      */
     private $psnType;
 
