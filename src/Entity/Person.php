@@ -13,27 +13,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class Person implements UserInterface
 {
     /**
-     * Returns the roles granted to the user.
-     *
-     *     public function getRoles()
-     *     {
-     *         return ['ROLE_USER'];
-     *     }
-     *
-     * Alternatively, the roles might be stored on a ``roles`` property,
-     * and populated in any number of different ways when the user object
-     * is created.
-     *
-     * @return (Role|string)[] The user roles
-     */
-    public function getRoles()
-    {
-        $roles = $this->getPsnType();
-        $roles = ['ROLE_USER'];
-        return $roles;
-    }
-
-    /**
      * Returns the salt that was originally used to encode the password.
      *
      * This can return null if the password was not encoded using a salt.
@@ -114,9 +93,9 @@ class Person implements UserInterface
     private $emailAddress;
 
     /**
-     * @ORM\Column(type="json_array")
+     * @ORM\Column(type="json")
      */
-    private $psnType;
+    private $roles;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -260,16 +239,32 @@ class Person implements UserInterface
         return $this;
     }
 
-    public function getPsnType(): ?string
+
+    /**
+     * @param mixed $roles
+     */
+    public function setRoles($roles): void
     {
-        return $this->psnType;
+        $this->roles = $roles;
     }
 
-    public function setPsnType(string $psnType): self
+    /**
+     * Returns the roles granted to the user.
+     *
+     *     public function getRoles()
+     *     {
+     *         return ['ROLE_USER'];
+     *     }
+     *
+     * Alternatively, the roles might be stored on a ``roles`` property,
+     * and populated in any number of different ways when the user object
+     * is created.
+     *
+     * @return (Role|string)[] The user roles
+     */
+    public function getRoles()
     {
-        $this->psnType = $psnType;
-
-        return $this;
+        return $this->roles;
     }
 
     public function getHiringDate(): ?\DateTimeInterface

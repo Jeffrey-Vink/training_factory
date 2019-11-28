@@ -1,7 +1,10 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory: { memory: null }
+        users:
+            entity:
+                class: App\Entity\Person
+                property: 'loginName'
 
     firewalls:
         dev:
@@ -27,5 +30,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/admin, roles: ROLE_ADMIN }
-         - { path: ^/lid, roles: ROLE_USER }
+         - { path: ^/instructeur, roles: ROLE_INSTRUCTOR }
+         - { path: ^/deelnemer, roles: ROLE_USER }
 #         // TODO assign correct user roles
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER, ROLE_INSTRUCTOR
+        ROLE_INSTRUCTOR: ROLE_USER

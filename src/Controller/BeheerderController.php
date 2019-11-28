@@ -20,6 +20,16 @@ use Symfony\Component\HttpFoundation\Request;
 class BeheerderController extends AbstractController
 {
     /**
+     * @Route("/", name="homepage")
+     */
+    public function homepageAction(TrainingRepository $trainingRepository): Response
+    {
+        return $this->render('beheerder/training/index.html.twig', [
+            'trainings' => $trainingRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/", name="training_index", methods={"GET"})
      */
     public function index(TrainingRepository $trainingRepository): Response

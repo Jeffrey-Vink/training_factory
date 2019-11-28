@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {{ parent() }}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('admin_homepage') }}">Admin pagina</a>
+    {% endif %}
+{% endblock %}

@@ -34,9 +34,12 @@
                                 <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
                                    href="{{ path('training_aanbod') }}">Training aanbod</a>
                             </li>
-                            <li class="nav-item mr-2">
-                                <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="{{ path('bezoeker_registreer') }}">Lid worden</a>
-                            </li>
+                            {% if is_granted('ROLE_USER') %}
+                            {% else %}
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm" href="{{ path('bezoeker_registreer') }}">Lid worden</a>
+                                </li>
+                            {% endif %}
                             <li class="nav-item mr-2">
                                 <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
                                    href="{{ path('gedragsregels') }}">Gedragsregels</a>
@@ -47,9 +50,15 @@
                             </li>
                         {% endblock %}
                     </ul>
-                    <div class="float-right">
-                        <a href="{{ path('app_login') }}" class="btn btn-outline-success">Login</a>
-                    </div>
+                    {% if is_granted('ROLE_USER') %}
+                        <div class="float-right">
+                            <a href="{{ path('app_logout') }}" class="btn btn-outline-success">logout</a>
+                        </div>
+                    {% else %}
+                        <div class="float-right">
+                            <a href="{{ path('app_login') }}" class="btn btn-outline-success">Login</a>
+                        </div>
+                    {% endif %}
                 </div>
             </nav>
         </div>

@@ -1,3 +1,5 @@
-{% block stylesheets %}{% endblock %}
-{% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+{% endblock %}
