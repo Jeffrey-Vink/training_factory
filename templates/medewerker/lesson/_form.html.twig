@@ -3,5 +3,5 @@
     {% for tag in form.training %}
         {{ form_row(tag.naam) }}
     {% endfor %}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn">{{ button_label|default('Opslaan') }}</button>
 {{ form_end(form) }}

@@ -59,7 +59,7 @@ class BezoekerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $repository = $em->getRepository(Person::class);
             $person = $form->getData();
-
+            $person->setRoles(["ROLE_USER"]);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($person);

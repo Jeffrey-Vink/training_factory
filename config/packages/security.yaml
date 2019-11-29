@@ -11,7 +11,9 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: lazy
+            anonymous: ~
+            json_login:
+                check_path: /login
             guard:
                 authenticators:
                     - App\Security\LoginAuthenticator
@@ -33,7 +35,3 @@ security:
          - { path: ^/instructeur, roles: ROLE_INSTRUCTOR }
          - { path: ^/deelnemer, roles: ROLE_USER }
 #          TODO assign correct user roles
-
-    role_hierarchy:
-        ROLE_ADMIN: ROLE_USER, ROLE_INSTRUCTOR
-        ROLE_INSTRUCTOR: ROLE_USER

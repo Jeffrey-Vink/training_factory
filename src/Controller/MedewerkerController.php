@@ -31,6 +31,7 @@ class MedewerkerController extends AbstractController
     public function new(Request $request): Response
     {
         $lesson = new Lesson();
+        $lesson->setInstructor($this->getUser(), Person::class);
         $form = $this->createForm(LessonType::class, $lesson);
         $form->handleRequest($request);
 

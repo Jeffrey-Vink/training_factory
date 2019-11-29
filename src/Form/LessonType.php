@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Lesson;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -24,13 +25,9 @@ class LessonType extends AbstractType
             ->add('maxPersons', IntegerType::class, [
                 'label' => 'Maximaal aantal mensen'
             ])
-            ->add('training', CollectionType::class, [
-                'entry_type' => TrainingType::class,
-                'entry_options' => ['label' => false],
-                'allow_add' => true,
-                'by_reference' => false,
+            ->add('training', ChoiceType::class, [
+                'choices' => 'choices',
             ])
-            ->add('instructor', IntegerType::class)
         ;
     }
 

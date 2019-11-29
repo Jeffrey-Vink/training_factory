@@ -5,10 +5,10 @@
 {% block content %}
     {{ parent() }}
     <div class="container card-body">
-        <h1>Create new Lesson</h1>
+        <h1>Les aanmaken</h1>
 
         {{ include('medewerker/lesson/_form.html.twig') }}
 
-        <a href="{{ path('medewerker_lesson_index') }}">back to list</a>
+        <a class="btn btn-sm btn-outline-success" href="{{ path('medewerker_lesson_index') }}">Terug naar overzicht</a>
     </div>
 {% endblock %}

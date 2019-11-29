@@ -49,9 +49,6 @@ class UserRegistrationType extends AbstractType
             ->add('emailAddress', TextType::class, [
                 'label' => 'E-mail',
                 ])
-            ->add('roles', HiddenType::class, [
-                'data' => ["ROLE_USER"],
-            ])
             ->add('submit', SubmitType::class, [
                 'label' => 'register',
             ]);

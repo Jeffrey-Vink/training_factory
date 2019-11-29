@@ -93,9 +93,9 @@ class Person implements UserInterface
     private $emailAddress;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="json_array")
      */
-    private $roles;
+    private $roles = [];
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -248,23 +248,9 @@ class Person implements UserInterface
         $this->roles = $roles;
     }
 
-    /**
-     * Returns the roles granted to the user.
-     *
-     *     public function getRoles()
-     *     {
-     *         return ['ROLE_USER'];
-     *     }
-     *
-     * Alternatively, the roles might be stored on a ``roles`` property,
-     * and populated in any number of different ways when the user object
-     * is created.
-     *
-     * @return (Role|string)[] The user roles
-     */
-    public function getRoles()
+    public function getRoles(): array
     {
-        return $this->roles;
+        return  $this->roles;
     }
 
     public function getHiringDate(): ?\DateTimeInterface
