@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person index{% endblock %}
+
+{% block content %}
+    <div class="card-body">
+        <h1>Overzicht personen</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Login</th>
+                <th>Voornaam</th>
+                <th>Tussenvoegsel</th>
+                <th>Achternaam</th>
+                <th>Postcode</th>
+                <th>Woonplaats</th>
+                <th>Acties</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for person in people %}
+                <tr>
+                    <td>{{ person.loginName }}</td>
+                    <td>{{ person.firstName }}</td>
+                    <td>{{ person.prePosition }}</td>
+                    <td>{{ person.lastName }}</td>
+                    <td>{{ person.postalCode }}</td>
+                    <td>{{ person.place }}</td>
+                    <td>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_person_show', {'id': person.id}) }}">Details</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="16">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a class="btn btn-outline-success btn-sm" href="{{ path('admin_person_new') }}">Nieuwe gebruiker</a>
+    </div>
+{% endblock %}

@@ -32,7 +32,7 @@ security:
          - { path: ^/admin, roles: ROLE_ADMIN }
          - { path: ^/instructeur, roles: ROLE_INSTRUCTOR }
          - { path: ^/deelnemer, roles: ROLE_USER }
-#         // TODO assign correct user roles
+#          TODO assign correct user roles
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER, ROLE_INSTRUCTOR

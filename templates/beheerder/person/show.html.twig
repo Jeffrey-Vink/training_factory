@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person{% endblock %}
+
+{% block content %}
+    <div class="card-body">
+        <h1>Person</h1>
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ person.id }}</td>
+            </tr>
+            <tr>
+                <th>Login naam</th>
+                <td>{{ person.loginName }}</td>
+            </tr>
+            <tr>
+                <th>Voornaam</th>
+                <td>{{ person.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Tussenvoegsel</th>
+                <td>{{ person.prePosition }}</td>
+            </tr>
+            <tr>
+                <th>Achternaam</th>
+                <td>{{ person.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Geboortedatum</th>
+                <td>{{ person.dateOfBirth ? person.dateOfBirth|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Geslacht</th>
+                <td>{{ person.gender }}</td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td>{{ person.emailAddress }}</td>
+            </tr>
+            <tr>
+                <th>Rollen</th>
+                <td>{{ person.roles ? person.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Hiring date</th>
+                <td>{{ person.hiringDate ? person.hiringDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Salaris</th>
+                <td>{{ person.salary }}</td>
+            </tr>
+            <tr>
+                <th>Straatnaam</th>
+                <td>{{ person.street }}</td>
+            </tr>
+            <tr>
+                <th>Postcode</th>
+                <td>{{ person.postalCode }}</td>
+            </tr>
+            <tr>
+                <th>Woonplaats</th>
+                <td>{{ person.place }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a class="btn btn-outline-primary" href="{{ path('admin_lid_index') }}">Terug naar de lijst</a>
+
+        <a class="btn btn-info" href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>
+
+        {{ include('beheerder/person/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

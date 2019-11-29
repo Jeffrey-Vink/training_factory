@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Training{% endblock %}
+{% block title %}Nieuwe training{% endblock %}
 
 {% block content %}
     {{ parent() }}
     <div class="container card-body">
-        <h1>Create new Training</h1>
+        <h1>Nieuwe training</h1>
 
         {{ include('beheerder/training/_form.html.twig') }}
 
-        <a href="{{ path('admin_training_index') }}">back to list</a>
+        <a href="{{ path('admin_training_index') }}">Terug naar overzicht</a>
     </div>
 {% endblock %}

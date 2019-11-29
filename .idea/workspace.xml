@@ -2,8 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Form/PersonType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/beheerder/person/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/training_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/training_factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TrainingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TrainingType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191128115554.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/_delete_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/beheerder/training/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/add.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/deelnemers_lijst.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/details.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/les_lijst.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/les_plannen.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/les_wijzigen.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/navigatie.html.twig" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +67,13 @@
   </component>
   <component name="FavoritesManager">
     <favorites_list name="training_factory" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -137,24 +178,25 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/medewerker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xampp/htdocs/HealthOne" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\training_factory\templates\beheerder" />
+      <recent name="D:\training_factory\templates\medewerker" />
+      <recent name="D:\training_factory\templates\deelnemer" />
+      <recent name="D:\training_factory\public\uploads" />
+      <recent name="D:\training_factory\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\training_factory\templates\medewerker" />
       <recent name="D:\training_factory\templates\bezoeker" />
       <recent name="D:\training_factory\templates\beheerder" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\training_factory\templates\medewerker" />
-      <recent name="D:\training_factory\templates\beheerder" />
-      <recent name="D:\training_factory\templates\deelnemer" />
-      <recent name="D:\training_factory\public\uploads" />
-      <recent name="D:\training_factory\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -187,6 +229,7 @@
       <workItem from="1574754351235" duration="9493000" />
       <workItem from="1574838208732" duration="579000" />
       <workItem from="1574945595452" duration="7678000" />
+      <workItem from="1574967219945" duration="12297000" />
     </task>
     <servers />
   </component>

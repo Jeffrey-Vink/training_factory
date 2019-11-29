@@ -26,7 +26,7 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="lesson_new", methods={"GET","POST"})
+     * @Route("/lesson/new", name="lesson_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,17 +49,20 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="lesson_show", methods={"GET"})
+     * @Route("/lesson/{id}", name="lesson_show", methods={"GET"})
      */
     public function show(Lesson $lesson): Response
     {
+        $registrations = $lesson->getRegistrations()->getValues();
+
         return $this->render('medewerker/lesson/show.html.twig', [
             'lesson' => $lesson,
+            'registrations' => $registrations,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="lesson_edit", methods={"GET","POST"})
+     * @Route("/lesson/{id}/edit", name="lesson_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Lesson $lesson): Response
     {
@@ -79,7 +82,7 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="lesson_delete", methods={"DELETE"})
+     * @Route("/lesson/{id}", name="lesson_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Lesson $lesson): Response
     {

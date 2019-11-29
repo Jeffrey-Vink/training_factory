@@ -15,9 +15,15 @@ class LessonType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('dateTime', DateTimeType::class)
-            ->add('location', IntegerType::class)
-            ->add('maxPersons', IntegerType::class)
+            ->add('dateTime', DateTimeType::class, [
+                'label' => 'Datum en tijd'
+            ])
+            ->add('location', IntegerType::class, [
+                'label' => 'Locatie'
+            ])
+            ->add('maxPersons', IntegerType::class, [
+                'label' => 'Maximaal aantal mensen'
+            ])
             ->add('training', CollectionType::class, [
                 'entry_type' => TrainingType::class,
                 'entry_options' => ['label' => false],

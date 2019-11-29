@@ -48,6 +48,26 @@
                                 <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
                                    href="{{ path('over_ons') }}">Lokatie & contact</a>
                             </li>
+                            {% if is_granted('ROLE_INSTRUCTOR') %}
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                       href="{{ path('medewerker_lesson_index') }}">Lessen</a>
+                                </li>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                       href="{{ path('admin_instructeur_index') }}">Instructeurs</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                       href="{{ path('admin_lid_index') }}">Leden</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                       href="{{ path('admin_training_index') }}">Trainingsvormen</a>
+                                </li>
+                            {% endif %}
                         {% endblock %}
                     </ul>
                     {% if is_granted('ROLE_USER') %}

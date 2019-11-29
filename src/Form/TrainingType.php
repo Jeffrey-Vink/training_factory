@@ -19,16 +19,22 @@ class TrainingType extends AbstractType
     {
         $builder
             ->setMethod('POST')
-            ->add('naam', TextType::class)
-            ->add('description', TextareaType::class)
-            ->add('duration', IntegerType::class)
-            ->add('costs', NumberType::class)
+            ->add('naam', TextType::class, [
+                'label' => 'Naam',
+            ])
+            ->add('description', TextareaType::class, [
+                'label' => 'Beschrijving',
+            ])
+            ->add('duration', IntegerType::class, [
+                'label' => 'Duur (minuten)',
+            ])
+            ->add('costs', NumberType::class, [
+                'label' => 'Kosten',
+            ])
             ->add('imageFile', FileType::class, [
                 'mapped' => false,
                 'required' => false,
-            ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'submit',
+                'label' => 'Afbeelding',
             ]);
     }
 

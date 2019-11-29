@@ -5,28 +5,34 @@
 {% block content %}
     {{ parent() }}
     <div class="container card-body">
-        <h1>Lesson</h1>
+        <h1>Les</h1>
 
         <table class="table">
             <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ lesson.id }}</td>
             </tr>
             <tr>
-                <th>DateTime</th>
+                <th>Datum en tijd</th>
                 <td>{{ lesson.dateTime ? lesson.dateTime|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Location</th>
+                <th>Locatie</th>
                 <td>{{ lesson.location }}</td>
             </tr>
             <tr>
-                <th>MaxPersons</th>
+                <th>Maximaal aantal personen</th>
                 <td>{{ lesson.maxPersons }}</td>
             </tr>
             </tbody>
         </table>
+
+        <h3>Deelnemers:</h3>
+        {% for registration in registrations %}
+            {{ registration.getMember.getFirstname() }} {{ registration.getMember.getPrePosition() }} {{ registration.getMember.getLastname() }}
+            <hr>
+        {% endfor %}
 
         <a href="{{ path('medewerker_lesson_index') }}">back to list</a>
 

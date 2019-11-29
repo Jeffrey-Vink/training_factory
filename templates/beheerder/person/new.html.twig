@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Person{% endblock %}
+
+{% block content %}
+    <h1>Create new Person</h1>
+
+    {{ include('beheerder/person/_form.html.twig') }}
+
+    <a href="{{ path('admin_lid_index') }}">back to list</a>
+{% endblock %}

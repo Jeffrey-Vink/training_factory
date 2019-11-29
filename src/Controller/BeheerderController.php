@@ -1,6 +1,9 @@
 <?php
 namespace App\Controller;
 
+use App\Entity\Person;
+use App\Form\PersonType;
+use App\Repository\PersonRepository;
 use App\Repository\TrainingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,9 +33,9 @@ class BeheerderController extends AbstractController
     }
 
     /**
-     * @Route("/", name="training_index", methods={"GET"})
+     * @Route("/training", name="training_index", methods={"GET"})
      */
-    public function index(TrainingRepository $trainingRepository): Response
+    public function trainingIndexAction(TrainingRepository $trainingRepository): Response
     {
         return $this->render('beheerder/training/index.html.twig', [
             'trainings' => $trainingRepository->findAll(),
@@ -40,7 +43,7 @@ class BeheerderController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="training_new", methods={"GET","POST"})
+     * @Route("/training/new", name="training_new", methods={"GET","POST"})
      */
     public function newAction(Request $request): Response
     {
@@ -63,7 +66,7 @@ class BeheerderController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="training_show", methods={"GET"})
+     * @Route("/training/{id}", name="training_show", methods={"GET"})
      */
     public function showAction(Training $training): Response
     {
@@ -73,7 +76,7 @@ class BeheerderController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="training_edit", methods={"GET","POST"})
+     * @Route("/training/{id}/edit", name="training_edit", methods={"GET","POST"})
      */
     public function editAction(Request $request, Training $training, EntityManagerInterface $em): Response
     {
@@ -106,7 +109,7 @@ class BeheerderController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="training_delete", methods={"DELETE"})
+     * @Route("/training/{id}", name="training_delete", methods={"DELETE"})
      */
     public function deleteAction(Request $request, Training $training): Response
     {
@@ -118,70 +121,91 @@ class BeheerderController extends AbstractController
 
         return $this->redirectToRoute('admin_training_index');
     }
-//    /**
-//     * @Route("/trainingen", name="beheerder_trainingen", methods={"GET"})
-//     */
-//    public function trainingAanbod(EntityManagerInterface $em)
-//    {
-//        $repository = $em->getRepository(Training::class);
-//        $trainingen = $repository->findAll();
-//
-//        return $this->render('beheerder/activiteiten.html.twig', [
-//            'trainingen' => $trainingen,
-//        ]);
-//    }
-//
-//    /**
-//     * @Route("/admin/trainingen", name="beheerder_training_delete", methods={"POST"})
-//     */
-//    public function trainingDeleteAction(EntityManagerInterface $em, Request $request)
-//    {
-//        $training = $request->get('delete');
-//        $trainingId = $training;
-//
-//        $repository = $em->getRepository(Training::class);
-//        $em->remove($repository->find($training));
-//        $em->flush();
-//        $trainingen = $repository->findAll();
-//
-//        $this->addFlash('deleted', 'Training '.$trainingId.' succesvol verwijderd!');
-//
-//        return $this->render('beheerder/index.html.twig', [
-//            'training' => $trainingId,
-//            'trainingen' => $trainingen,
-//        ]);
-//    }
-//
-//    /**
-//     * @Route("/admin/training/{training}/edit", name="beheerder_training_edit")
-//     */
-//    public function trainingEditAction(Training $training, Request $request, EntityManagerInterface $em)
-//    {
-//        $form = $this->createForm(TrainingType::class, $training);
-//        $form->handleRequest($request);
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            /** @var UploadedFile $uploadedFile */
-//            $uploadedFile = $form['imageFile']->getData();
-//            if ($uploadedFile) {
-//                $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
-//                $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-//                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
-//                $uploadedFile->move(
-//                    $destination,
-//                    $newFilename
-//                );
-//                $training->setImageFilename($newFilename);
-//            }
-//            $em->persist($training);
-//            $em->flush();
-//
-//            $this->addFlash('success', 'Training succesvol geupdatet!');
-//
-//            return $this->redirectToRoute('beheerder_trainingen');
-//        }
-//        return $this->render('beheerder/details.html.twig', [
-//            'trainingForm' => $form->createView(),
-//            'image' => $training->getImageFilename(),
-//        ]);
-//    }
+
+    /**
+     * @Route("/leden", name="lid_index", methods={"GET"})
+     */
+    public function lidIndexAction(PersonRepository $personRepository): Response
+    {
+        return $this->render('beheerder/person/index.html.twig', [
+            'people' => $personRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/instructeurs", name="instructeur_index", methods={"GET"})
+     */
+    public function instructeurIndexAction(PersonRepository $personRepository): Response
+    {
+        return $this->render('beheerder/person/index.html.twig', [
+            'people' => $personRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/gebruiker/new", name="person_new", methods={"GET","POST"})
+     */
+    public function new(Request $request): Response
+    {
+        $person = new Person();
+        $form = $this->createForm(PersonType::class, $person);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($person);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('admin_lid_index');
+        }
+
+        return $this->render('beheerder/person/new.html.twig', [
+            'person' => $person,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/gebruiker/{id}", name="person_show", methods={"GET"})
+     */
+    public function showGebruikerAction(Person $person): Response
+    {
+        return $this->render('beheerder/person/show.html.twig', [
+            'person' => $person,
+        ]);
+    }
+
+    /**
+     * @Route("/gebruiker/{id}/edit", name="person_edit", methods={"GET","POST"})
+     */
+    public function editGebruikerAction(Request $request, Person $person): Response
+    {
+        $form = $this->createForm(PersonType::class, $person);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('admin_lid_index');
+        }
+
+        return $this->render('beheerder/person/edit.html.twig', [
+            'person' => $person,
+            'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/gebruiker/{id}", name="person_delete", methods={"DELETE"})
+     */
+    public function deleteGebruikerAction(Request $request, Person $person): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$person->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($person);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin_lid_index');
+    }
 }

@@ -9,37 +9,33 @@
         <table class="table">
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Naam</th>
-                <th>Description</th>
-                <th>Duration</th>
-                <th>Costs</th>
-                <th>ImageFilename</th>
-                <th>actions</th>
+                <th>Duur (minuten)</th>
+                <th>Kosten</th>
+                <th>Afbeelding</th>
+                <th>Acties</th>
             </tr>
             </thead>
             <tbody>
             {% for training in trainings %}
                 <tr>
-                    <td>{{ training.id }}</td>
                     <td>{{ training.naam }}</td>
-                    <td>{{ training.description }}</td>
                     <td>{{ training.duration }}</td>
                     <td>{{ training.costs }}</td>
                     <td>{{ training.imageFilename }}</td>
                     <td>
-                        <a href="{{ path('admin_training_show', {'id': training.id}) }}">show</a>
-                        <a href="{{ path('admin_training_edit', {'id': training.id}) }}">edit</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_training_show', {'id': training.id}) }}">Details</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_training_edit', {'id': training.id}) }}">Bewerk</a>
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="7">no records found</td>
+                    <td colspan="7">Geen gegevens</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
 
-        <a href="{{ path('admin_training_new') }}">Create new</a>
+        <a class="btn btn-success" href="{{ path('admin_training_new') }}">Nieuwe training</a>
     </div>
 {% endblock %}
