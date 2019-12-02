@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/profile/_delete_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/profile/_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/profile/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/training_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/training_factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PersonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TrainingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TrainingType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LessonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LessonRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PersonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,22 +147,22 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/xampp/htdocs/HealthOne" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/deelnemer/profile" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\training_factory\templates\medewerker" />
-      <recent name="D:\training_factory\templates\bezoeker" />
-      <recent name="D:\training_factory\templates\beheerder" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\training_factory\templates\beheerder" />
       <recent name="D:\training_factory\templates\medewerker" />
@@ -184,16 +170,22 @@
       <recent name="D:\training_factory\public\uploads" />
       <recent name="D:\training_factory\src" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jeffrey\Desktop\training_factory\templates\deelnemer\profile" />
+      <recent name="D:\training_factory\templates\medewerker" />
+      <recent name="D:\training_factory\templates\bezoeker" />
+      <recent name="D:\training_factory\templates\beheerder" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -219,6 +211,7 @@
       <workItem from="1575155891224" duration="6731000" />
       <workItem from="1575223131259" duration="17502000" />
       <workItem from="1575269336426" duration="755000" />
+      <workItem from="1575275367656" duration="3593000" />
     </task>
     <servers />
   </component>
@@ -243,6 +236,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="656" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1575275371063">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="656" y="383" key="com.intellij.ide.util.TipDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1575275371063" />
   </component>
   <component name="XPathView.XPathProjectComponent">
     <history />

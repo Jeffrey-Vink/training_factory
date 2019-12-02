@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bewerken: {{ person.firstName ~ " " ~ person.prePosition ~ " " ~ person.lastName }}{% endblock %}
+
+{% block content %}
+    <div class="card-body">
+        <h1>Persoon bewerken: {{ person.firstName ~ " " ~ person.prePosition ~ " " ~ person.lastName }}</h1>
+
+        {{ include('deelnemer/profile/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <a href="{{ path('lid_homepage') }}">back to list</a>
+
+        {{ include('deelnemer/profile/_delete_form.html.twig') }}
+    </div>
+{% endblock %}
