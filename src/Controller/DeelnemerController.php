@@ -3,11 +3,14 @@ namespace App\Controller;
 
 use App\Entity\Lesson;
 use App\Entity\Person;
+use App\Entity\Registration;
+use App\Entity\Training;
 use App\Form\PersonType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * Class DeelnemerController
@@ -37,8 +40,24 @@ class DeelnemerController extends AbstractController
     }
 
     /**
-     * @Route("/inschrijvingen", name="training_inschrijvingen")
+     * @Route("/inschrijven{id}", name="les_inschrijven", methods={"POST", "GET"})
      */
+    public function trainingInschrijvenAction(Request $request, Training $training, Security $security, Person $person): Response
+    {
+        $registratie = new Registration();
+        if($this->isCsrfTokenValid('training' . $training->getId(), $request->request->get('_token'))){
+            $registratie->setMember($request->request->get(''));
+//            TODO fix right Person pass
+            $registratie->setLesson($request->request->get('trainingId'));
+            $em = $this->getDoctrine()->getManager(Registration::class);
+            $em->persist($registratie);
+            $em->flush();
+
+            $this->redirectToRoute('lid_homepage');
+        }
+
+        $this->redirectToRoute('lid_training_Agenda');
+    }
 
     /**
      * @Route("/profiel", name="profiel_edit", methods={"GET", "POST"})

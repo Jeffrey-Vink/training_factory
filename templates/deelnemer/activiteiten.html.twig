@@ -34,6 +34,11 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -44,6 +49,11 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -54,6 +64,11 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -64,6 +79,11 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -74,6 +94,11 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -84,6 +109,11 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -94,6 +124,12 @@
                         {{ les.training.naam }}:
                         {{ les.dateTime|date("d-m-Y") }}. Tijdstip:
                         {{ les.dateTime|date("H:i") }}
+                        <form class="float-right" method="POST" action="{{ path('lid_les_inschrijven', {'id': les.training.id}) }}">
+                            <input type="hidden" name="_method" value="POST">
+                            <input type="hidden" name="_training" value="{{ ''~les.training.id }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token('training' ~ les.training.id) }}">
+                            <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                        </form>
                     {% endif %}
                 {% endfor %}
             </div>
