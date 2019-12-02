@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/agenda_day.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/lesson/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,12 +157,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/deelnemer/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/deelnemer/lesson" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\training_factory\templates\deelnemer\lesson" />
+      <recent name="C:\Users\Jeffrey\Desktop\training_factory\templates\deelnemer\profile" />
+      <recent name="D:\training_factory\templates\medewerker" />
+      <recent name="D:\training_factory\templates\bezoeker" />
+      <recent name="D:\training_factory\templates\beheerder" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\training_factory\templates\beheerder" />
       <recent name="D:\training_factory\templates\medewerker" />
@@ -165,22 +177,16 @@
       <recent name="D:\training_factory\public\uploads" />
       <recent name="D:\training_factory\src" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jeffrey\Desktop\training_factory\templates\deelnemer\profile" />
-      <recent name="D:\training_factory\templates\medewerker" />
-      <recent name="D:\training_factory\templates\bezoeker" />
-      <recent name="D:\training_factory\templates\beheerder" />
-    </key>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>

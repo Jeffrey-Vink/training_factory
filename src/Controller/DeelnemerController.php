@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Entity\Lesson;
@@ -22,9 +23,14 @@ class DeelnemerController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function homepageAction()
+    public function homepageAction(Security $security)
     {
-        return $this->render('deelnemer/index.html.twig');
+        $person = $security->getUser();
+        $lessen = $person->getRegistrations();
+        return $this->render('deelnemer/index.html.twig', [
+            'user' => $person,
+            'lessen' => $lessen,
+        ]);
     }
 
     /**
@@ -32,31 +38,39 @@ class DeelnemerController extends AbstractController
      */
     public function trainingAgendaAction(): Response
     {
-        $date = getdate();
+        $registraties = $this->getDoctrine()->getRepository(Person::class)->findOneBy(['id'=>$this->getUser()->getId()])->getRegistrations();
         $lessen = $this->getDoctrine()->getRepository(Lesson::class)->findByDate();
-        return $this->render('deelnemer/activiteiten.html.twig', [
+        return $this->render('deelnemer/agenda.html.twig', [
             'lessen' => $lessen,
+            'registraties' => $registraties,
         ]);
     }
 
     /**
-     * @Route("/inschrijven{id}", name="les_inschrijven", methods={"POST", "GET"})
+     * @Route("/inschrijven/{id}", name="les_inschrijven", methods={"POST"})
      */
-    public function trainingInschrijvenAction(Request $request, Training $training, Security $security, Person $person): Response
+    public function trainingInschrijvenAction(Lesson $lesson, Request $request, Security $security): Response
     {
         $registratie = new Registration();
-        if($this->isCsrfTokenValid('training' . $training->getId(), $request->request->get('_token'))){
-            $registratie->setMember($request->request->get(''));
-//            TODO fix right Person pass
-            $registratie->setLesson($request->request->get('trainingId'));
-            $em = $this->getDoctrine()->getManager(Registration::class);
-            $em->persist($registratie);
-            $em->flush();
+        $person = $this->getDoctrine()->getRepository(Person::class)->findOneBy(['id' => $security->getUser()->getId()]);
+        $lesson = $this->getDoctrine()->getRepository(Lesson::class)->findOneBy(['id' => $lesson->getId()]);
+        $registratie->setMember($person);
+        $registratie->setLesson($lesson);
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($registratie);
+        $em->flush();
 
-            $this->redirectToRoute('lid_homepage');
-        }
+        return $this->redirectToRoute('lid_homepage');
+    }
 
-        $this->redirectToRoute('lid_training_Agenda');
+    /**
+     * @Route("/inschrijving/{id}", name="les")
+     */
+    public function readInschrijvingAction(Lesson $lesson)
+    {
+        return $this->render('deelnemer/lesson/show.html.twig', [
+            'lesson' => $lesson
+        ]);
     }
 
     /**
@@ -71,7 +85,7 @@ class DeelnemerController extends AbstractController
         $form->remove('password');
 
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $person->setRoles($this->getUser()->getRoles());
             $em->persist($person);
@@ -95,5 +109,19 @@ class DeelnemerController extends AbstractController
         }
 
         return $this->redirectToRoute('homepage');
+    }
+
+    /**
+     * @Route("/registratie/{id}", name="registratie_delete", methods={"DELETE"})
+     */
+    public function deleteRegistratieAction(Request $request, Registration $registration)
+    {
+        if ($this->isCsrfTokenValid('delete' . $registration->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($registration);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('lid_homepage');
     }
 }

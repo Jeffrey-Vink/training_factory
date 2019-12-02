@@ -2,4 +2,61 @@
 
 {% block content %}
     {{ parent() }}
+    <div class="card-body">
+        <h3>Welkom {{ user.firstName }}</h3>
+        <div>
+            <hr class="p-0 m-0">
+            Hier heb je een overzicht van al jouw trainingen:
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <td>Soort training</td>
+                    <td>Trainer</td>
+                    <td>Tijdstip</td>
+                    <td>Acties</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for les in lessen %}
+                <tr>
+                    <td>{{ les.lesson.training.naam }}</td>
+                    <td>{{ les.lesson.instructor.firstName ~ " " ~ les.lesson.instructor.prePosition ~ " " ~ les.lesson.instructor.lastName }}</td>
+                    <td>{{ les.lesson.dateTime|date('D d-m-Y') }}</td>
+                    <td>
+                        <form action="{{ path('lid_les', {'id': les.lesson.id}) }}" class="float-left" method="POST">
+                            <button class="btn btn-sm btn-primary mr-2">Details</button>
+                        </form>
+                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ les.id }}" data-toggle="collapse"
+                                aria-expanded="false"
+                                data-target="#registratie_{{ les.id }}" onclick="this.classList.add('invisible')"
+                        >Verwijder</button>
+                    </td>
+                </tr>
+                    <tr class="collapse alert alert-warning" id="registratie_{{ les.id }}">
+                        <td colspan="3" class="text-center">
+                            Weet u zeker dat u deze training wilt verwijderen?
+                        </td>
+                        <td>
+                            <form class="float-left" method="post" action="{{ path('lid_registratie_delete', {'id': les.id}) }}">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ les.id) }}">
+                                <button class="btn btn-warning btn-sm">Verwijder</button>
+                            </form>
+                            <button class="btn btn-sm btn-info ml-2" data-target="#registratie_{{ les.id }}"
+                                    data-toggle="collapse"
+                                    onclick="document.getElementById('remove_'+{{ les.id }}).classList.remove('invisible')">
+                                Nee
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+                {% if lessen|length == 0 %}
+                    <tr>
+                        <td>Er zijn nog geen trainingen geregistreerd.</td>
+                    </tr>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

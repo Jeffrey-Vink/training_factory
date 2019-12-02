@@ -1,0 +1,35 @@
+{% set aantal = 0 %}
+
+{% block day %}
+    {% for aantal in 0..6 %}
+        <div class="tab-pane" aria-labelledby="lesson_{{ aantal+1 }}" id="lesson_{{ aantal+1 }}" role="tabpanel">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <td>Training</td>
+                    <td>Datum</td>
+                    <td>Tijdstip</td>
+                    <td>Acties</td>
+                </tr>
+                </thead>
+                {% for les in lessen %}
+                    {% if les.dateTime|date('d-m-Y') is same as('now'|date_modify('+'~aantal~' day')|date('d-m-Y')) %}
+                        <tr>
+                            <td>{{ les.training.naam }}</td>
+                            <td>{{ les.dateTime|date('d-m-Y') }}</td>
+                            <td>{{ les.dateTime|date('H:i') }}</td>
+                            <td>
+                                {% if registraties not in les.registrations %}
+                                    <form class="float-left" method="POST"
+                                          action="{{ path('lid_les_inschrijven', {'id': les.id}) }}">
+                                        <button class="btn btn-sm btn-outline-primary">Inschrijven</button>
+                                    </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    {% endfor %}
+{% endblock %}
