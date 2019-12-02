@@ -1,24 +1,31 @@
 <?php
 namespace App\Controller;
 use App\Entity\Lesson;
+use App\Entity\Person;
+use App\Entity\Training;
 use App\Form\LessonType;
+use App\Form\PersonType;
+use App\Form\TrainingType;
 use App\Repository\LessonRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use \Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 /**
  * Class MedewerkerController
  * @package App\Controller
  * @Route("/medewerker", name="medewerker_")
+ * @IsGranted("ROLE_INSTRUCTOR")
  */
 class MedewerkerController extends AbstractController
 {
     /**
      * @Route("/", name="lesson_index", methods={"GET"})
      */
-    public function index(LessonRepository $lessonRepository): Response
+    public function indexLessonAction(LessonRepository $lessonRepository): Response
     {
         return $this->render('medewerker/lesson/index.html.twig', [
             'lessons' => $lessonRepository->findAll(),
@@ -28,15 +35,16 @@ class MedewerkerController extends AbstractController
     /**
      * @Route("/lesson/new", name="lesson_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function newLessonAction(Request $request, Security $security): Response
     {
         $lesson = new Lesson();
-        $lesson->setInstructor($this->getUser(), Person::class);
         $form = $this->createForm(LessonType::class, $lesson);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $user = $entityManager->getRepository(Person::class)->findOneBy(['id' => $security->getUser()->getId()]);
+            $lesson->setInstructor($user);
             $entityManager->persist($lesson);
             $entityManager->flush();
 
@@ -52,7 +60,7 @@ class MedewerkerController extends AbstractController
     /**
      * @Route("/lesson/{id}", name="lesson_show", methods={"GET"})
      */
-    public function show(Lesson $lesson): Response
+    public function showLessonAction(Lesson $lesson): Response
     {
         $registrations = $lesson->getRegistrations()->getValues();
 
@@ -65,7 +73,7 @@ class MedewerkerController extends AbstractController
     /**
      * @Route("/lesson/{id}/edit", name="lesson_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Lesson $lesson): Response
+    public function editLessonAction(Request $request, Lesson $lesson): Response
     {
         $form = $this->createForm(LessonType::class, $lesson);
         $form->handleRequest($request);
@@ -85,7 +93,7 @@ class MedewerkerController extends AbstractController
     /**
      * @Route("/lesson/{id}", name="lesson_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Lesson $lesson): Response
+    public function deleteLessonAction(Request $request, Lesson $lesson): Response
     {
         if ($this->isCsrfTokenValid('delete'.$lesson->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -94,5 +102,13 @@ class MedewerkerController extends AbstractController
         }
 
         return $this->redirectToRoute('medewerker_lesson_index');
+    }
+
+    /**
+     * @Route("/lesson/{id}", name="lesson_delete_confirmation", methods={"CONFIRMATION"})
+     */
+    public function deleteLessonConfirmation(Request $request)
+    {
+        return addFlash('confirmRequest', 'Weet u zeker dat u dit wilt verwijderen?');
     }
 }

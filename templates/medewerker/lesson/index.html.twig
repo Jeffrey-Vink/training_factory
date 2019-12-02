@@ -5,28 +5,51 @@
 {% block content %}
     {{ parent() }}
     <div class="container card-body">
-        <h1>Lesson index</h1>
+        <h1>Lessen</h1>
 
         <table class="table">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>DateTime</th>
-                <th>Location</th>
-                <th>MaxPersons</th>
-                <th>actions</th>
-            </tr>
+            <thead class="thead-dark">
+                <tr>
+                    <th>Naam</th>
+                    <th>Datum en tijd</th>
+                    <th>Locatie</th>
+                    <th>Maximaal aantal personen</th>
+                    <th>Acties</th>
+                </tr>
             </thead>
             <tbody>
             {% for lesson in lessons %}
                 <tr>
-                    <td>{{ lesson.id }}</td>
+                    <td>{{ lesson.training.naam }}</td>
                     <td>{{ lesson.dateTime ? lesson.dateTime|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ lesson.location }}</td>
                     <td>{{ lesson.maxPersons }}</td>
                     <td>
-                        <a href="{{ path('medewerker_lesson_show', {'id': lesson.id}) }}">show</a>
-                        <a href="{{ path('medewerker_lesson_edit', {'id': lesson.id}) }}">edit</a>
+                        <a class="btn btn-sm btn-outline-primary"
+                           href="{{ path('medewerker_lesson_show', {'id': lesson.id}) }}">Bekijk</a>
+                        <a class="btn btn-sm btn-outline-primary"
+                           href="{{ path('medewerker_lesson_edit', {'id': lesson.id}) }}">Bewerk</a>
+                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ lesson.id }}" data-toggle="collapse"
+                                aria-expanded="false"
+                                data-target="#lesson_{{ lesson.id }}" onclick="this.classList.add('invisible')"
+                        >Verwijder</button>
+                    </td>
+                </tr>
+                <tr class="collapse alert alert-warning" id="lesson_{{ lesson.id }}">
+                    <td colspan="4" class="text-center">
+                        Weet u zeker dat u deze les wilt verwijderen?
+                    </td>
+                    <td>
+                        <form class="float-left" method="post" action="{{ path('medewerker_lesson_delete', {'id': lesson.id}) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ lesson.id) }}">
+                            <button class="btn btn-warning btn-sm">Verwijder</button>
+                        </form>
+                        <button class="btn btn-sm btn-info ml-2" data-target="#lesson_{{ lesson.id }}"
+                                data-toggle="collapse"
+                                onclick="document.getElementById('remove_'+{{ lesson.id }}).classList.remove('invisible')">
+                            Nee
+                        </button>
                     </td>
                 </tr>
             {% else %}

@@ -19,22 +19,20 @@ class LessonRepository extends ServiceEntityRepository
         parent::__construct($registry, Lesson::class);
     }
 
-    // /**
-    //  * @return Lesson[] Returns an array of Lesson objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Lesson[] Returns an array of Lesson objects
+     */
+    public function findByDate()
     {
         return $this->createQueryBuilder('l')
-            ->andWhere('l.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('l.id', 'ASC')
+            ->andWhere('l.dateTime > CURRENT_DATE()')
+            ->andWhere('l.dateTime < CURRENT_DATE()+7')
+            ->orderBy('l.dateTime', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Lesson

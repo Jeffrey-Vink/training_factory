@@ -1,7 +1,3 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {% for tag in form.training %}
-        {{ form_row(tag.naam) }}
-    {% endfor %}
     <button class="btn">{{ button_label|default('Opslaan') }}</button>
 {{ form_end(form) }}

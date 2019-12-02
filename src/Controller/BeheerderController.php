@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Entity\Person;
@@ -6,6 +7,8 @@ use App\Form\PersonType;
 use App\Repository\PersonRepository;
 use App\Repository\TrainingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Training;
@@ -86,9 +89,9 @@ class BeheerderController extends AbstractController
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['imageFile']->getData();
             if ($uploadedFile) {
-                $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+                $destination = $this->getParameter('kernel.project_dir') . '/public/uploads';
                 $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $newFilename = Urlizer::urlize($originalFilename).'-'.uniqid().'.'.$uploadedFile->guessExtension();
+                $newFilename = Urlizer::urlize($originalFilename) . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
                 $uploadedFile->move(
                     $destination,
                     $newFilename
@@ -113,7 +116,7 @@ class BeheerderController extends AbstractController
      */
     public function deleteAction(Request $request, Training $training): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$training->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $training->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($training);
             $entityManager->flush();
@@ -128,17 +131,17 @@ class BeheerderController extends AbstractController
     public function lidIndexAction(PersonRepository $personRepository): Response
     {
         return $this->render('beheerder/person/index.html.twig', [
-            'people' => $personRepository->findAll(),
+            'people' => $this->getDoctrine()->getRepository(Person::class)->findByRoles('ROLE_USER'),
         ]);
     }
 
     /**
      * @Route("/instructeurs", name="instructeur_index", methods={"GET"})
      */
-    public function instructeurIndexAction(PersonRepository $personRepository): Response
+    public function instructeurIndexAction(): Response
     {
         return $this->render('beheerder/person/index.html.twig', [
-            'people' => $personRepository->findAll(),
+            'people' => $this->getDoctrine()->getRepository(Person::class)->findByRoles('ROLE_INSTRUCTOR'),
         ]);
     }
 
@@ -149,10 +152,19 @@ class BeheerderController extends AbstractController
     {
         $person = new Person();
         $form = $this->createForm(PersonType::class, $person);
-        $form->handleRequest($request);
+        $form->add('rol', ChoiceType::class, [
+            'mapped' => false,
+            'choices' => [
+                'Lid' => 'ROLE_USER',
+                'Instructeur' => 'ROLE_INSTRUCTOR',
+                'Beheerder' => 'ROLE_ADMIN',
+            ],
+        ]);
 
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $person->setRoles([$form->get('rol')->getData()]);
             $entityManager->persist($person);
             $entityManager->flush();
 
@@ -181,10 +193,22 @@ class BeheerderController extends AbstractController
     public function editGebruikerAction(Request $request, Person $person): Response
     {
         $form = $this->createForm(PersonType::class, $person);
+        $form->add('rol', ChoiceType::class, [
+            'mapped' => false,
+            'choices' => [
+                'Lid' => 'ROLE_USER',
+                'Instructeur' => 'ROLE_INSTRUCTOR',
+                'Beheerder' => 'ROLE_ADMIN',
+            ],
+        ]);
+        $form->remove('password');
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $person->setRoles([$form->get('rol')->getData()]);
+            $entityManager->persist($person);
+            $entityManager->flush();
 
             return $this->redirectToRoute('admin_lid_index');
         }
@@ -200,7 +224,7 @@ class BeheerderController extends AbstractController
      */
     public function deleteGebruikerAction(Request $request, Person $person): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$person->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $person->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($person);
             $entityManager->flush();

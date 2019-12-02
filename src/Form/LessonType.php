@@ -3,10 +3,15 @@
 namespace App\Form;
 
 use App\Entity\Lesson;
+use App\Entity\Training;
+use Symfony\Bridge\Doctrine\Form\ChoiceList\EntityLoaderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,8 +30,9 @@ class LessonType extends AbstractType
             ->add('maxPersons', IntegerType::class, [
                 'label' => 'Maximaal aantal mensen'
             ])
-            ->add('training', ChoiceType::class, [
-                'choices' => 'choices',
+            ->add('training', EntityType::class, [
+                'class' => Training::class,
+                'choice_label' => 'naam',
             ])
         ;
     }

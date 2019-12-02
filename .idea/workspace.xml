@@ -3,18 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Person.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PersonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/TrainingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TrainingType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LessonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LessonRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -158,22 +166,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xampp/htdocs/HealthOne" />
+    <property name="last_opened_file_path" value="D:/xampp/htdocs/HealthOne" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\training_factory\templates\medewerker" />
+      <recent name="D:\training_factory\templates\bezoeker" />
+      <recent name="D:\training_factory\templates\beheerder" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\training_factory\templates\beheerder" />
       <recent name="D:\training_factory\templates\medewerker" />
       <recent name="D:\training_factory\templates\deelnemer" />
       <recent name="D:\training_factory\public\uploads" />
       <recent name="D:\training_factory\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\training_factory\templates\medewerker" />
-      <recent name="D:\training_factory\templates\bezoeker" />
-      <recent name="D:\training_factory\templates\beheerder" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -207,6 +216,8 @@
       <workItem from="1574838208732" duration="579000" />
       <workItem from="1574945595452" duration="7678000" />
       <workItem from="1574967219945" duration="12297000" />
+      <workItem from="1575155891224" duration="6731000" />
+      <workItem from="1575223131259" duration="17502000" />
     </task>
     <servers />
   </component>
@@ -231,5 +242,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
   </component>
 </project>

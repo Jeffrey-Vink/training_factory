@@ -5,26 +5,40 @@
 {% block content %}
     {{ parent() }}
     <div class="container card-body">
-        <h1>Les</h1>
+        <h1>Les: {{ lesson.training.naam }}</h1>
 
-        <table class="table">
-            <tbody>
-            <tr>
-                <th>ID</th>
-                <td>{{ lesson.id }}</td>
-            </tr>
-            <tr>
-                <th>Datum en tijd</th>
-                <td>{{ lesson.dateTime ? lesson.dateTime|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Locatie</th>
-                <td>{{ lesson.location }}</td>
-            </tr>
-            <tr>
-                <th>Maximaal aantal personen</th>
-                <td>{{ lesson.maxPersons }}</td>
-            </tr>
+        <table class="table ">
+            <thead class="thead-light">
+                <tr>
+                    <th>Instructeur</th>
+                    <td>{{ lesson.instructor.firstName ~' '~ lesson.instructor.lastName }}</td>
+                </tr>
+                <tr>
+                    <th>Datum en tijd</th>
+                    <td>{{ lesson.dateTime ? lesson.dateTime|date('d-M-Y H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Locatie</th>
+                    <td>{{ lesson.location }}</td>
+                </tr>
+                <tr>
+                    <td>Maximaal aantal personen</td>
+                    <td>{{ lesson.maxPersons }}</td>
+                </tr>
+            </thead>
+            <tbody class="thead-dark">
+                <tr>
+                    <td>Duur (minuten)</td>
+                    <td>{{ lesson.training.duration }}</td>
+                </tr>
+                <tr>
+                    <td>Kosten</td>
+                    <td>&euro;{{ lesson.training.costs }}</td>
+                </tr>
+                <tr>
+                    <td>Omschrijving</td>
+                    <td>{{ lesson.training.description|markdown }}</td>
+                </tr>
             </tbody>
         </table>
 

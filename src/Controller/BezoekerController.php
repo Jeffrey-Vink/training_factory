@@ -57,7 +57,6 @@ class BezoekerController extends AbstractController
         $form = $this->createForm(UserRegistrationType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $repository = $em->getRepository(Person::class);
             $person = $form->getData();
             $person->setRoles(["ROLE_USER"]);
 

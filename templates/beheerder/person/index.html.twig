@@ -30,6 +30,27 @@
                     <td>
                         <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_person_show', {'id': person.id}) }}">Details</a>
                         <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>
+                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ person.id }}" data-toggle="collapse"
+                                aria-expanded="false"
+                                data-target="#person_{{ person.id }}" onclick="this.classList.add('invisible')"
+                        >Verwijder</button>
+                    </td>
+                </tr>
+                <tr class="collapse alert alert-warning" id="person_{{ person.id }}">
+                    <td colspan="6" class="text-center">
+                        Weet u zeker dat u deze persoon wilt verwijderen?
+                    </td>
+                    <td>
+                        <form class="float-left" method="post" action="{{ path('admin_person_delete', {'id': person.id}) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ person.id) }}">
+                            <button class="btn btn-warning btn-sm">Verwijder</button>
+                        </form>
+                        <button class="btn btn-sm btn-info ml-2" data-target="#person_{{ person.id }}"
+                                data-toggle="collapse"
+                                onclick="document.getElementById('remove_'+{{ person.id }}).classList.remove('invisible')">
+                            Nee
+                        </button>
                     </td>
                 </tr>
             {% else %}
