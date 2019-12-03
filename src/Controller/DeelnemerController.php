@@ -23,7 +23,7 @@ class DeelnemerController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function homepageAction(Security $security)
+    public function homepageAction(Security $security): Response
     {
         $person = $security->getUser();
         $lessen = $person->getRegistrations();
@@ -66,7 +66,7 @@ class DeelnemerController extends AbstractController
     /**
      * @Route("/inschrijving/{id}", name="les")
      */
-    public function readInschrijvingAction(Lesson $lesson)
+    public function readInschrijvingAction(Lesson $lesson): Response
     {
         return $this->render('deelnemer/lesson/show.html.twig', [
             'lesson' => $lesson
@@ -114,7 +114,7 @@ class DeelnemerController extends AbstractController
     /**
      * @Route("/registratie/{id}", name="registratie_delete", methods={"DELETE"})
      */
-    public function deleteRegistratieAction(Request $request, Registration $registration)
+    public function deleteRegistratieAction(Request $request, Registration $registration): Response
     {
         if ($this->isCsrfTokenValid('delete' . $registration->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
