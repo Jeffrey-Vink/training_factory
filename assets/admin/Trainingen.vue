@@ -2,14 +2,15 @@
     <div>
         <table>
             <thead>
-                <tr v-for="training in trainingen">{{ training.naam }}</tr>
+                <tr v-for="training in trainingen">
+                    <td>{{ training.naam}}</td>
+                </tr>
             </thead>
         </table>
     </div>
 </template>
 
 <script>
-    import axios from 'axios'
     export default {
         name: "Trainingen",
         data() {
@@ -18,7 +19,7 @@
             }
         },
         async created() {
-            const response = await axios.get('http://localhost:8000/admin/trainingen')
+            const response = await get('http://localhost:8000/admin/trainingen')
             this.trainingen = response.data
         }
     }
