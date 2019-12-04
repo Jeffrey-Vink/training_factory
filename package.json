@@ -15,7 +15,7 @@
     },
     "dependencies": {
         "vue": "^2.6.10",
-        "vue-loader": "15.0.11",
+        "vue-loader": "^15.0.11",
         "vue-template-compiler": "^2.6.10",
         "yarn": "^1.21.0"
     }

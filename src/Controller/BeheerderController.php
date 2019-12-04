@@ -8,7 +8,6 @@ use App\Repository\PersonRepository;
 use App\Repository\TrainingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Training;
@@ -33,6 +32,15 @@ class BeheerderController extends AbstractController
         return $this->render('beheerder/training/index.html.twig', [
             'trainings' => $trainingRepository->findAll(),
         ]);
+    }
+
+    /**
+     * @Route("/trainingen", name="trainingen", methods={"POST"})
+     */
+    public function getTrainingenAction(Request $request)
+    {
+        $trainingen = $this->getDoctrine()->getRepository(Training::class)->findAll();
+        return $this->json(['trainingen' => $trainingen]);
     }
 
     /**

@@ -43,7 +43,7 @@
                                 </li>
                                 <li class="nav-item mr-2">
                                     <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
-                                       href="{{ path('over_ons') }}">Lokatie & contact</a>
+                                       href="{{ path('over_ons') }}">Locatie & contact</a>
                                 </li>
                                 <li class="nav-item mr-2">
                                     <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
@@ -102,14 +102,13 @@
     <div class="container card p-0 my-3">
         {% block card %}
             <div class="card-header p-0 shadow-md">
-                <div class="row">
-                    <img class="img col-4 p-0" src="{{ asset('img/Stootzak training.jpg') }}" alt="">
-                    <img class="img col-4 p-0" src="{{ asset('img/Kickboksen.jpg') }}" alt="">
-                    <img class="img col-4 p-0" src="{{ asset('img/MMA.jpg') }}" alt="">
+                <div class="row justify-content-between">
+                    <img class="img col-4 px-1" src="{{ asset('img/Stootzak training.jpg') }}" alt="">
+                    <img class="img col-4 px-0" src="{{ asset('img/Kickboksen.jpg') }}" alt="">
+                    <img class="img col-4 px-1" src="{{ asset('img/MMA.jpg') }}" alt="">
                 </div>
             </div>
             {% block content %}
-
             {% endblock %}
         {% endblock %}
     </div>

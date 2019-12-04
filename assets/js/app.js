@@ -1,6 +1,13 @@
-require('../css/app.css');
+import Vue from 'vue'
+import App from './App.vue'
+import Trainingen from "../admin/Trainingen"
 
-// Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-// const $ = require('jquery');
+new Vue({
+    el: "#app",
+    components: {App},
+});
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+new Vue({
+    el: "#trainingen",
+    components: {Trainingen}
+});
