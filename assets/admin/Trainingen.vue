@@ -3,7 +3,7 @@
         <table>
             <thead>
                 <tr v-for="training in trainingen">
-                    <td>{{ training.naam}}</td>
+                    <td>{{ training.naam }}</td>
                 </tr>
             </thead>
         </table>
@@ -19,7 +19,7 @@
             }
         },
         async created() {
-            const response = await get('http://localhost:8000/admin/trainingen')
+            const response = await fetch('http://localhost:8000/admin/trainingen');
             this.trainingen = response.data
         }
     }

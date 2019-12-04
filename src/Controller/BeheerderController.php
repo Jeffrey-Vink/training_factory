@@ -38,9 +38,27 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/trainingen", name="trainingen")
      */
-    public function getTrainingenAction(TrainingRepository $trainingRepository)
+    public function getTrainingenAction(Request $request): JsonResponse
     {
-        return new JsonResponse([$trainingRepository->findAll()]);
+        $trainingen = $this->getDoctrine()->getRepository(Training::class)->findAll();
+        $trainingArray = [];
+
+        foreach ($trainingen as $training){
+            $trainingArray[] = $this->transformTrainingAction($training);
+        }
+
+        return $this->json($trainingArray);
+    }
+
+    public function transformTrainingAction($training)
+    {
+        return [
+            'id' => $training->getId(),
+            'naam' => $training->getNaam(),
+            'description' => $training->getDescription(),
+            'costs' => $training->getCosts(),
+            'duration' => $training->getDuration(),
+        ];
     }
 
     /**
