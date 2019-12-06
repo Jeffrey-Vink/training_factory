@@ -1,10 +1,10 @@
 <?php
 namespace App\Controller;
 use App\Entity\Lesson;
-use App\Entity\Person;
 use App\Entity\Training;
+use App\Entity\User;
 use App\Form\LessonType;
-use App\Form\PersonType;
+use App\Form\UserType;
 use App\Form\TrainingType;
 use App\Repository\LessonRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -43,7 +43,7 @@ class MedewerkerController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $user = $entityManager->getRepository(Person::class)->findOneBy(['id' => $security->getUser()->getId()]);
+            $user = $entityManager->getRepository(User::class)->findOneBy(['id' => $security->getUser()->getId()]);
             $lesson->setInstructor($user);
             $entityManager->persist($lesson);
             $entityManager->flush();

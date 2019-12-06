@@ -1,18 +1,11 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users:
-            entity:
-                class: App\Entity\Person
-                property: 'loginName'
-        # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
                 class: App\Entity\User
                 property: username
     encoders:
-        App\Entity\Person:
-            algorithm: auto
         App\Entity\User:
             algorithm: auto
 

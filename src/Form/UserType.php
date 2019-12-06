@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Person;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -14,8 +15,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 
-class PersonType extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -24,7 +26,7 @@ class PersonType extends AbstractType
             ->add('loginName', TextType::class, [
                 'label' => 'Gebruikersnaam',
             ])
-            ->add('password', PasswordType::class, [
+            ->add('password', PasswordEncoderInterface::class, [
                 'label' => 'Wachtwoord',
             ])
             ->add('firstName', TextType::class, [
@@ -76,7 +78,7 @@ class PersonType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Person::class,
+            'data_class' => User::class,
         ]);
     }
 }

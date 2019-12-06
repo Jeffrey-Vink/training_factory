@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-use App\Entity\Person;
+use App\Entity\User;
 use App\Entity\Training;
 use App\Form\UserRegistrationType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -57,11 +57,11 @@ class BezoekerController extends AbstractController
         $form = $this->createForm(UserRegistrationType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $person = $form->getData();
-            $person->setRoles(["ROLE_USER"]);
+            $user = $form->getData();
+            $user->setRoles(["ROLE_USER"]);
 
             $em = $this->getDoctrine()->getManager();
-            $em->persist($person);
+            $em->persist($user);
             $em->flush();
 
             return $this->render('bezoeker/index.html.twig');

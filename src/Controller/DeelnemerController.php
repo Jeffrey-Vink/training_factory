@@ -3,10 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Lesson;
-use App\Entity\Person;
 use App\Entity\Registration;
 use App\Entity\Training;
-use App\Form\PersonType;
+use App\Entity\User;
+use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,10 +25,10 @@ class DeelnemerController extends AbstractController
      */
     public function homepageAction(Security $security): Response
     {
-        $person = $security->getUser();
-        $lessen = $person->getRegistrations();
+        $user = $security->getUser();
+        $lessen = $user->getRegistrations();
         return $this->render('deelnemer/index.html.twig', [
-            'user' => $person,
+            'user' => $user,
             'lessen' => $lessen,
         ]);
     }
@@ -38,7 +38,7 @@ class DeelnemerController extends AbstractController
      */
     public function trainingAgendaAction(): Response
     {
-        $registraties = $this->getDoctrine()->getRepository(Person::class)->findOneBy(['id'=>$this->getUser()->getId()])->getRegistrations();
+        $registraties = $this->getDoctrine()->getRepository(User::class)->findOneBy(['id'=>$this->getUser()->getId()])->getRegistrations();
         $lessen = $this->getDoctrine()->getRepository(Lesson::class)->findByDate();
         return $this->render('deelnemer/agenda.html.twig', [
             'lessen' => $lessen,
@@ -52,9 +52,9 @@ class DeelnemerController extends AbstractController
     public function trainingInschrijvenAction(Lesson $lesson, Request $request, Security $security): Response
     {
         $registratie = new Registration();
-        $person = $this->getDoctrine()->getRepository(Person::class)->findOneBy(['id' => $security->getUser()->getId()]);
+        $user = $this->getDoctrine()->getRepository(User::class)->findOneBy(['id' => $security->getUser()->getId()]);
         $lesson = $this->getDoctrine()->getRepository(Lesson::class)->findOneBy(['id' => $lesson->getId()]);
-        $registratie->setMember($person);
+        $registratie->setMember($user);
         $registratie->setLesson($lesson);
         $em = $this->getDoctrine()->getManager();
         $em->persist($registratie);
@@ -78,8 +78,8 @@ class DeelnemerController extends AbstractController
      */
     public function profielAction(Request $request): Response
     {
-        $person = $this->getUser();
-        $form = $this->createForm(PersonType::class, $person);
+        $user = $this->getUser();
+        $form = $this->createForm(UserType::class, $user);
         $form->remove('hiringDate');
         $form->remove('salary');
         $form->remove('password');
@@ -87,8 +87,8 @@ class DeelnemerController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $person->setRoles($this->getUser()->getRoles());
-            $em->persist($person);
+            $user->setRoles($this->getUser()->getRoles());
+            $em->persist($user);
             $em->flush();
         }
         return $this->render('deelnemer/profile/edit.html.twig', [
@@ -100,11 +100,11 @@ class DeelnemerController extends AbstractController
     /**
      * @Route("/profile/{id}", name="profile_delete", methods={"DELETE"})
      */
-    public function deleteGebruikerAction(Request $request, Person $person): Response
+    public function deleteGebruikerAction(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $person->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($person);
+            $entityManager->remove($user);
             $entityManager->flush();
         }
 

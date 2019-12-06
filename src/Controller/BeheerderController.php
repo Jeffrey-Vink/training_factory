@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Person;
-use App\Form\PersonType;
-use App\Repository\PersonRepository;
+use App\Entity\User;
+use App\Form\UserType;
+use App\Repository\UserRepository;
 use App\Repository\TrainingRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -154,10 +154,10 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/leden", name="lid_index", methods={"GET"})
      */
-    public function lidIndexAction(PersonRepository $personRepository): Response
+    public function lidIndexAction(UserRepository $userRepository): Response
     {
         return $this->render('beheerder/person/index.html.twig', [
-            'people' => $this->getDoctrine()->getRepository(Person::class)->findByRoles('ROLE_USER'),
+            'people' => $this->getDoctrine()->getRepository(User::class)->findByRoles('ROLE_USER'),
         ]);
     }
 
@@ -167,7 +167,7 @@ class BeheerderController extends AbstractController
     public function instructeurIndexAction(): Response
     {
         return $this->render('beheerder/person/index.html.twig', [
-            'people' => $this->getDoctrine()->getRepository(Person::class)->findByRoles('ROLE_INSTRUCTOR'),
+            'people' => $this->getDoctrine()->getRepository(User::class)->findByRoles('ROLE_INSTRUCTOR'),
         ]);
     }
 
@@ -176,8 +176,8 @@ class BeheerderController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $person = new Person();
-        $form = $this->createForm(PersonType::class, $person);
+        $user = new User();
+        $form = $this->createForm(UserType::class, $user);
         $form->add('rol', ChoiceType::class, [
             'mapped' => false,
             'choices' => [
@@ -190,15 +190,15 @@ class BeheerderController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $person->setRoles([$form->get('rol')->getData()]);
-            $entityManager->persist($person);
+            $user->setRoles([$form->get('rol')->getData()]);
+            $entityManager->persist($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_lid_index');
         }
 
         return $this->render('beheerder/person/new.html.twig', [
-            'person' => $person,
+            'person' => $user,
             'form' => $form->createView(),
         ]);
     }
@@ -206,19 +206,19 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/gebruiker/{id}", name="person_show", methods={"GET"})
      */
-    public function showGebruikerAction(Person $person): Response
+    public function showGebruikerAction(User $user): Response
     {
         return $this->render('beheerder/person/show.html.twig', [
-            'person' => $person,
+            'person' => $user,
         ]);
     }
 
     /**
      * @Route("/gebruiker/{id}/edit", name="person_edit", methods={"GET","POST"})
      */
-    public function editGebruikerAction(Request $request, Person $person): Response
+    public function editGebruikerAction(Request $request, User $user): Response
     {
-        $form = $this->createForm(PersonType::class, $person);
+        $form = $this->createForm(UserType::class, $user);
         $form->add('rol', ChoiceType::class, [
             'mapped' => false,
             'choices' => [
@@ -232,15 +232,15 @@ class BeheerderController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $person->setRoles([$form->get('rol')->getData()]);
-            $entityManager->persist($person);
+            $user->setRoles([$form->get('rol')->getData()]);
+            $entityManager->persist($user);
             $entityManager->flush();
 
             return $this->redirectToRoute('admin_lid_index');
         }
 
         return $this->render('beheerder/person/edit.html.twig', [
-            'person' => $person,
+            'person' => $user,
             'form' => $form->createView(),
         ]);
     }
@@ -248,11 +248,11 @@ class BeheerderController extends AbstractController
     /**
      * @Route("/gebruiker/{id}", name="person_delete", methods={"DELETE"})
      */
-    public function deleteGebruikerAction(Request $request, Person $person): Response
+    public function deleteGebruikerAction(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $person->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($person);
+            $entityManager->remove($user);
             $entityManager->flush();
         }
 
