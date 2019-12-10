@@ -86,15 +86,16 @@
                             {% endif %}
                         {% endblock %}
                     </ul>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <div class="float-right">
-                            <a href="{{ path('app_logout') }}" class="btn btn-outline-success">logout</a>
-                        </div>
-                    {% else %}
-                        <div class="float-right">
+                    <div class="float-right">
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            {% if app.user %}
+                                Ingelogd als: {{ app.user.username }} ({{ app.user.roles[0] }}), <a class="btn btn-outline-success"
+                                                                                 href="{{ path('app_logout') }}">Logout</a>
+                            {% endif %}
+                        {% else %}
                             <a href="{{ path('app_login') }}" class="btn btn-outline-success">Login</a>
-                        </div>
-                    {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
             </nav>
         </div>

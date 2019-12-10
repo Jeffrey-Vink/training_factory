@@ -23,10 +23,10 @@ class UserType extends AbstractType
     {
         $builder
             ->setMethod('POST')
-            ->add('loginName', TextType::class, [
+            ->add('username', TextType::class, [
                 'label' => 'Gebruikersnaam',
             ])
-            ->add('password', PasswordEncoderInterface::class, [
+            ->add('password', PasswordType::class, [
                 'label' => 'Wachtwoord',
             ])
             ->add('firstName', TextType::class, [

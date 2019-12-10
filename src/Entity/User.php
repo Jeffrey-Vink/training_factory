@@ -41,7 +41,7 @@ class User implements UserInterface
     private $firstName;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length=16, nullable=true)
      */
     private $prePosition;
 
@@ -56,7 +56,7 @@ class User implements UserInterface
     private $dateOfBirth;
 
     /**
-     * @ORM\Column(type="string", length=16)
+     * @ORM\Column(type="string", length=16, nullable=true)
      */
     private $gender;
 
