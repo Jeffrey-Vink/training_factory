@@ -33,7 +33,7 @@ class Lesson
     /**
      * @ORM\Column(type="integer")
      */
-    private $maxPersons;
+    private $maxUsers;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Training", inversedBy="lessons")
@@ -42,7 +42,7 @@ class Lesson
     private $training;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="lessons")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="lessons")
      */
     private $instructor;
 
@@ -85,14 +85,14 @@ class Lesson
         return $this;
     }
 
-    public function getMaxPersons(): ?int
+    public function getMaxUsers(): ?int
     {
-        return $this->maxPersons;
+        return $this->maxUsers;
     }
 
-    public function setMaxPersons(int $maxPersons): self
+    public function setMaxUsers(int $maxUsers): self
     {
-        $this->maxPersons = $maxPersons;
+        $this->maxUsers = $maxUsers;
 
         return $this;
     }
@@ -109,12 +109,12 @@ class Lesson
         return $this;
     }
 
-    public function getInstructor(): ?Person
+    public function getInstructor(): ?User
     {
         return $this->instructor;
     }
 
-    public function setInstructor(?Person $instructor): self
+    public function setInstructor(?User $instructor): self
     {
         $this->instructor = $instructor;
 

@@ -28,7 +28,7 @@ class Registration
     private $lesson;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Person", inversedBy="registrations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="registrations")
      * @ORM\JoinColumn(nullable=false)
      */
     private $member;
@@ -62,12 +62,12 @@ class Registration
         return $this;
     }
 
-    public function getMember(): ?Person
+    public function getMember(): ?User
     {
         return $this->member;
     }
 
-    public function setMember(?Person $member): self
+    public function setMember(?User $member): self
     {
         $this->member = $member;
 

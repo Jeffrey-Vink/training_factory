@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Michelf\MarkdownInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class BezoekerController extends AbstractController
 {
@@ -36,7 +37,7 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("aanbod", name="training_aanbod")
+     * @Route("/aanbod", name="training_aanbod")
      */
     public function trainingAanbodAction(EntityManagerInterface $em)
     {
@@ -52,13 +53,18 @@ class BezoekerController extends AbstractController
     /**
      * @Route("registreer", name="bezoeker_registreer")
      */
-    public function registerAction(Request $request, EntityManagerInterface $em)
+    public function registerAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $form = $this->createForm(UserRegistrationType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
             $user->setRoles(["ROLE_USER"]);
+            $pass = $form->getData()->getPassword();
+            $user->setPassword($passwordEncoder->encodePassword(
+                $user,
+                $pass
+            ));
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);

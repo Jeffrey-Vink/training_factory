@@ -20,7 +20,7 @@ class UserRegistrationType extends AbstractType
     {
         $builder
             ->setMethod('POST')
-            ->add('loginName', TextType::class, [
+            ->add('username', TextType::class, [
                 'label' => 'Gebruikersnaam',
                 ])
             ->add('password', PasswordType::class, [

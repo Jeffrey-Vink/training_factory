@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="" />
+    <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lesson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Person.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191210101216.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Migrations/Version20191211085517.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191210112732.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,6 +198,7 @@
         </serviceView>
       </list>
     </option>
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -216,6 +230,8 @@
       <workItem from="1575969116810" duration="212000" />
       <workItem from="1575972495541" duration="1274000" />
       <workItem from="1575973810493" duration="5143000" />
+      <workItem from="1576050237117" duration="4779000" />
+      <workItem from="1576059594234" duration="10300000" />
     </task>
     <servers />
   </component>
@@ -250,6 +266,14 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="648" y="40" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1575976332905" />
+    <state x="690" y="306" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1576054349901">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="690" y="306" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1576054349901" />
+    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576062604296">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1576062604296" />
     <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1575370538104">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -274,11 +298,11 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="348" y="170" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1575965752474" />
-    <state x="656" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1575973810080">
+    <state x="656" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1576059594154">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="656" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1575414311302" />
-    <state x="656" y="383" key="com.intellij.ide.util.TipDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1575973810080" />
+    <state x="656" y="383" key="com.intellij.ide.util.TipDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1576059594154" />
     <state x="623" y="279" width="672" height="678" key="search.everywhere.popup" timestamp="1575972992933">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
