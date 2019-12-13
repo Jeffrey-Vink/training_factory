@@ -27,7 +27,7 @@ class LessonType extends AbstractType
             ->add('location', IntegerType::class, [
                 'label' => 'Locatie'
             ])
-            ->add('maxPersons', IntegerType::class, [
+            ->add('maxUsers', IntegerType::class, [
                 'label' => 'Maximaal aantal mensen'
             ])
             ->add('training', EntityType::class, [
