@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fe18cc8b-0e04-4b23-9771-229fd96ae73e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/lesson/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +224,8 @@
       <workItem from="1575973810493" duration="5143000" />
       <workItem from="1576050237117" duration="4779000" />
       <workItem from="1576059594234" duration="10459000" />
-      <workItem from="1576222890135" duration="6162000" />
+      <workItem from="1576222890135" duration="6269000" />
+      <workItem from="1576482308082" duration="4444000" />
     </task>
     <servers />
   </component>
@@ -291,11 +292,11 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="348" y="170" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1575965752474" />
-    <state x="656" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1576223420564">
+    <state x="656" y="383" key="com.intellij.ide.util.TipDialog" timestamp="1576485265550">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="656" y="356" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1575414311302" />
-    <state x="656" y="383" key="com.intellij.ide.util.TipDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1576223420564" />
+    <state x="656" y="383" key="com.intellij.ide.util.TipDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1576485265550" />
     <state x="769" y="476" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576223437375">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

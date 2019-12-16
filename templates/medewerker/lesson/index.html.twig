@@ -23,7 +23,7 @@
                     <td>{{ lesson.training.naam }}</td>
                     <td>{{ lesson.dateTime ? lesson.dateTime|date('Y-m-d H:i:s') : '' }}</td>
                     <td>{{ lesson.location }}</td>
-                    <td>{{ lesson.maxPersons }}</td>
+                    <td>{{ lesson.maxUsers }}</td>
                     <td>
                         <a class="btn btn-sm btn-outline-primary"
                            href="{{ path('medewerker_lesson_show', {'id': lesson.id}) }}">Bekijk</a>

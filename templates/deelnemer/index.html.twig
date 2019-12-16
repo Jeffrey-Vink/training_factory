@@ -12,6 +12,7 @@
                 <tr>
                     <td>Soort training</td>
                     <td>Trainer</td>
+                    <td>Datum</td>
                     <td>Tijdstip</td>
                     <td>Acties</td>
                 </tr>
@@ -22,6 +23,7 @@
                     <td>{{ les.lesson.training.naam }}</td>
                     <td>{{ les.lesson.instructor.firstName ~ " " ~ les.lesson.instructor.prePosition ~ " " ~ les.lesson.instructor.lastName }}</td>
                     <td>{{ les.lesson.dateTime|date('D d-m-Y') }}</td>
+                    <td>{{ les.lesson.dateTime|date('H:i') }}</td>
                     <td>
                         <form action="{{ path('lid_les', {'id': les.lesson.id}) }}" class="float-left" method="POST">
                             <button class="btn btn-sm btn-primary mr-2">Details</button>
