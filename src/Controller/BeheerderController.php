@@ -30,9 +30,7 @@ class BeheerderController extends AbstractController
      */
     public function homepageAction(TrainingRepository $trainingRepository): Response
     {
-        return $this->render('beheerder/training/index.html.twig', [
-            'trainings' => $trainingRepository->findAll(),
-        ]);
+        return $this->render('beheerder/training/index.html.twig');
     }
 
     /**
@@ -47,7 +45,9 @@ class BeheerderController extends AbstractController
             $trainingArray[] = $this->transformTrainingAction($training);
         }
 
-        return $this->json($trainingArray);
+        return $this->json([
+            'trainingen' => $trainingArray,
+        ]);
     }
 
     public function transformTrainingAction($training)

@@ -6,3 +6,8 @@ new Vue({
     el: "#trainingen",
     components: {Trainingen}
 });
+
+var trainingDetails = new Vue({
+   el: "#details",
+   components: {Training}
+});
