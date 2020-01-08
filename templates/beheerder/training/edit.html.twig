@@ -2,12 +2,12 @@
 
 {% block title %}Edit Training{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Training bewerken</h1>
 
     {{ include('beheerder/training/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('training_index') }}">Terug naar het overzicht</a>
+    <a href="{{ path('admin_training_index') }}">Terug naar het overzicht</a>
 
     {{ include('beheerder/training/_delete_form.html.twig') }}
 {% endblock %}

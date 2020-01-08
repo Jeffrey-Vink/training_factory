@@ -131,9 +131,10 @@ class BeheerderController extends AbstractController
 
             return $this->redirectToRoute('admin_training_index');
         }
-        return $this->render('beheerder/details.html.twig', [
-            'trainingForm' => $form->createView(),
+        return $this->render('beheerder/training/edit.html.twig', [
+            'form' => $form->createView(),
             'image' => $training->getImageFilename(),
+            'training' => $training,
         ]);
     }
 
