@@ -1,3 +1,14 @@
 {{ form_start(form) }}
-    <button class="btn">{{ button_label|default('Opslaan') }}</button>
+    <label>Datum</label>
+    {{ form_widget(form.dateTime.date) }}
+    <label>Tijdstip</label>
+    {{ form_widget(form.dateTime.time) }}
+    <label>Locatie</label>
+    {{ form_widget(form.location) }}
+    <label>Maximaal aantal deelnemers</label>
+    {{ form_widget(form.maxUsers) }}
+    <label>Training</label>
+    {{ form_widget(form.training) }}
+    <button class="btn btn-success">{{ button_label|default('Opslaan') }}</button>
+<a href="{{ path('medewerker_lesson_index') }}" class="btn btn-outline-primary" style="height:38px">Overzicht</a>
 {{ form_end(form) }}

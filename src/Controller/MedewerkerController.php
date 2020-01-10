@@ -27,8 +27,9 @@ class MedewerkerController extends AbstractController
      */
     public function indexLessonAction(LessonRepository $lessonRepository): Response
     {
+        $lessen = $this->getDoctrine()->getRepository(Lesson::class)->findAllByDate();
         return $this->render('medewerker/lesson/index.html.twig', [
-            'lessons' => $lessonRepository->findAll(),
+            'lessons' => $lessen,
         ]);
     }
 

@@ -27,11 +27,22 @@ class LessonRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('l')
             ->andWhere('l.dateTime > CURRENT_DATE()')
             ->andWhere('l.dateTime < CURRENT_DATE()+7')
-            ->orderBy('l.dateTime', 'ASC')
+            ->orderBy('l.dateTime', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    public function findAllByDate()
+    {
+        return $this->createQueryBuilder('l')
+            ->andWhere('l.dateTime > CURRENT_DATE()-365')
+            ->orderBy('l.dateTime', 'DESC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
     }
 
     /*

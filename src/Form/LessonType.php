@@ -22,7 +22,9 @@ class LessonType extends AbstractType
     {
         $builder
             ->add('dateTime', DateTimeType::class, [
-                'label' => 'Datum en tijd'
+                'date_widget' => 'single_text',
+                'time_widget' => 'single_text',
+                'date_format' => 'dd.MM.yyyy',
             ])
             ->add('location', IntegerType::class, [
                 'label' => 'Locatie'
