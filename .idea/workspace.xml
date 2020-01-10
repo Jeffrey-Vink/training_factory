@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ef0fd574-ceb9-47a7-9701-6467068a6da6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LessonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LessonRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Migrations/Version20191211085517.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +161,7 @@
       <workItem from="1576664424768" duration="8328000" />
       <workItem from="1578469363491" duration="1798000" />
       <workItem from="1578479994985" duration="4719000" />
-      <workItem from="1578642024275" duration="7208000" />
+      <workItem from="1578642024275" duration="12555000" />
     </task>
     <servers />
   </component>
@@ -171,6 +172,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578651969249">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="690" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.40.1920.1040@0.40.1920.1040" timestamp="1578651969249" />
     <state x="655" y="382" key="com.intellij.ide.util.TipDialog" timestamp="1578642024609">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

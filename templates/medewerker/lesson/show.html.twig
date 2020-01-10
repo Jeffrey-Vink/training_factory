@@ -44,7 +44,9 @@
 
         <h3>Deelnemers:</h3>
         {% for registration in registrations %}
-            {{ registration.getMember.getFirstname() }} {{ registration.getMember.getPrePosition() }} {{ registration.getMember.getLastname() }}
+            {% if(registration.getMember.getActive == 1) %}
+                {{ registration.getMember.getFirstname() }} {{ registration.getMember.getPrePosition() }} {{ registration.getMember.getLastname() }}
+            {% endif %}
             <hr>
         {% endfor %}
 

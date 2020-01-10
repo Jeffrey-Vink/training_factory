@@ -100,6 +100,11 @@ class User implements UserInterface
      */
     private $registrations;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $active;
+
     public function __construct()
     {
         $this->lessons = new ArrayCollection();
@@ -366,6 +371,18 @@ class User implements UserInterface
                 $registration->setMember(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getActive(): ?bool
+    {
+        return $this->active;
+    }
+
+    public function setActive(bool $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

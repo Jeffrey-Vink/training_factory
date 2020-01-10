@@ -6,6 +6,7 @@ use App\Entity\Person;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -23,6 +24,10 @@ class UserType extends AbstractType
     {
         $builder
             ->setMethod('POST')
+            ->add('active', CheckboxType::class, [
+                'required' => false,
+                'label' => 'Actief account'
+            ])
             ->add('username', TextType::class, [
                 'label' => 'Gebruikersnaam',
             ])

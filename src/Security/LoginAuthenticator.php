@@ -63,6 +63,11 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
 
         $user = $this->entityManager->getRepository(User::class)->findOneBy(['username' => $credentials['username']]);
 
+        if ($user->getActive() != 1) {
+            // fail authentication with a custom error
+            throw new CustomUserMessageAuthenticationException('Het account is niet actief, neem contact op met de beheerder.');
+        }
+
         if (!$user) {
             // fail authentication with a custom error
             throw new CustomUserMessageAuthenticationException('Login Name could not be found.');
