@@ -25,6 +25,7 @@ class LessonType extends AbstractType
                 'date_widget' => 'single_text',
                 'time_widget' => 'single_text',
                 'date_format' => 'dd.MM.yyyy',
+                'years' => range(date('Y'), date('Y')+1),
             ])
             ->add('location', IntegerType::class, [
                 'label' => 'Locatie'

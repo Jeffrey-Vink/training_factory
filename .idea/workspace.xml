@@ -2,119 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef0fd574-ceb9-47a7-9701-6467068a6da6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/training_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/training_factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/Trainingen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/Trainingen.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/assets.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/cache.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/cache.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/dev/easy_log_handler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/easy_log_handler.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/dev/monolog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/monolog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/prod/monolog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/prod/monolog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/prod/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/prod/routing.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/prod/webpack_encore.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/prod/webpack_encore.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/routing.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/routing.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security_checker.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security_checker.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/monolog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/monolog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/validator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/validator.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/web_profiler.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/test/webpack_encore.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/test/webpack_encore.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/validator.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/validator.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/annotations.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/annotations.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/dev/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/dev/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes/dev/web_profiler.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Lesson.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Lesson.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Training.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Training.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/LoginType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LoginType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/TrainingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TrainingType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserRegistrationType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LessonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LessonRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RegistrationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RegistrationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TrainingRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/activiteiten.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/beheer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/beheer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/navigatie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/navigatie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/gedragsregels.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/gedragsregels.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/overons.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/overons.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/registreren.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/registreren.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/trainingaanbod.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker/trainingaanbod.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/agenda_day.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/agenda_day.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/lesson/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/navigatie.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/navigatie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/profile/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/profile/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/profile/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/profile/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/profile/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/profile/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_delete_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -262,7 +153,8 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
   <component name="ServiceViewManager">
@@ -294,6 +186,7 @@
       <workItem from="1578658275332" duration="619000" />
       <workItem from="1578658951361" duration="249000" />
       <workItem from="1578996801965" duration="7120000" />
+      <workItem from="1580373842931" duration="2218000" />
     </task>
     <servers />
   </component>
@@ -305,7 +198,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -335,6 +230,22 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="740" y="313" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1579002899954" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1580374182884">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1580374182884">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1580374182884">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1580374182884">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
     <state x="461" y="201" key="SettingsEditor" timestamp="1579001941010">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
