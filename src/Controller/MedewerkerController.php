@@ -109,14 +109,6 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/lesson/{id}", name="lesson_delete_confirmation", methods={"CONFIRMATION"})
-     */
-    public function deleteLessonConfirmation(Request $request)
-    {
-        return addFlash('confirmRequest', 'Weet u zeker dat u dit wilt verwijderen?');
-    }
-
-    /**
      * @Route("/registrations", name="registrations", methods={"GET"})
      */
     public function registrationsAction()

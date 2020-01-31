@@ -5,10 +5,9 @@
 {% block content %}
     {{ parent() }}
     <div class="container card-body">
-        <h1>Edit Lesson</h1>
+        <h1>Les wijzigen</h1>
 
         {{ include('medewerker/lesson/_form.html.twig', {'button_label': 'Update'}) }}
 
-        {{ include('medewerker/lesson/_delete_form.html.twig') }}
     </div>
 {% endblock %}

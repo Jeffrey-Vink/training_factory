@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Lesson{% endblock %}
+{% block title %}Nieuwe Les{% endblock %}
 
 {% block content %}
     {{ parent() }}
@@ -9,6 +9,6 @@
 
         {{ include('medewerker/lesson/_form.html.twig') }}
 
-        <a class="btn btn-sm btn-outline-success" href="{{ path('medewerker_lesson_index') }}">Terug naar overzicht</a>
+        <a class="btn btn-sm btn-outline-success" href="{{ path('medewerker_lesson_index') }}">Terug naar het overzicht</a>
     </div>
 {% endblock %}

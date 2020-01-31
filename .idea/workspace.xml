@@ -2,41 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef0fd574-ceb9-47a7-9701-6467068a6da6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/header_img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/registraties.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/training_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/training_factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/admin/Trainingen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/Trainingen.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/LessonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LessonRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/RegistrationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RegistrationRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/show.html.twig" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -200,15 +173,15 @@
       <recent name="D:\xampp\htdocs\training_factory\public\img" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -275,22 +248,22 @@
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="740" y="313" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1579002899954" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1580374182884">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1580457148452">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1580374182884">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1580457148452" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1580457148452">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1580374182884">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1580457148452" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1580457148452">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1580374182884">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1580457148452" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1580457148452">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1580374182884" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1580457148452" />
     <state x="461" y="201" key="SettingsEditor" timestamp="1579001941010">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

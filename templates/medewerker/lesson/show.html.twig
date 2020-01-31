@@ -50,9 +50,9 @@
             <hr>
         {% endfor %}
 
-        <a href="{{ path('medewerker_lesson_index') }}">back to list</a>
-
-        <a href="{{ path('medewerker_lesson_edit', {'id': lesson.id}) }}">edit</a>
+        <a class="btn btn-outline-primary" href="{{ path('medewerker_lesson_index') }}">Terug naar het overzicht</a>
+        <br>
+        <a class="btn btn-outline-primary" href="{{ path('medewerker_lesson_edit', {'id': lesson.id}) }}">Bewerken</a>
 
         {{ include('medewerker/lesson/_delete_form.html.twig') }}
     </div>
