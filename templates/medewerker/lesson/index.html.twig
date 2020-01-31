@@ -13,17 +13,20 @@
                     <th>Naam</th>
                     <th>Datum en tijd</th>
                     <th>Locatie</th>
-                    <th>Maximaal aantal personen</th>
+                    <th>Max. personen</th>
+                    <th>Inschrijvingen</th>
                     <th>Acties</th>
                 </tr>
             </thead>
             <tbody>
             {% for lesson in lessons %}
+                {% if lesson.instructor == app.user and lesson.dateTime >= date('now') %}
                 <tr>
                     <td>{{ lesson.training.naam }}</td>
-                    <td>{{ lesson.dateTime ? lesson.dateTime|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ lesson.dateTime ? lesson.dateTime|date('d F Y - H:i:s') : '' }}</td>
                     <td>{{ lesson.location }}</td>
                     <td>{{ lesson.maxUsers }}</td>
+                    <td>{{ lesson.registrations|length }}</td>
                     <td>
                         <a class="btn btn-sm btn-outline-primary"
                            href="{{ path('medewerker_lesson_show', {'id': lesson.id}) }}">Bekijk</a>
@@ -52,14 +55,73 @@
                         </button>
                     </td>
                 </tr>
+                {% endif %}
             {% else %}
                 <tr>
-                    <td colspan="5">no records found</td>
+                    <td colspan="5">Geen lessen gevonden</td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
 
-        <a href="{{ path('medewerker_lesson_new') }}">Create new</a>
+        <h3>Les archief <small>{{ app.user.firstName }} {{ app.user.prePosition }} {{ app.user.lastName }}</small></h3>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Naam</th>
+                <th>Datum en tijd</th>
+                <th>Locatie</th>
+                <th>Max. personen</th>
+                <th>Inschrijvingen</th>
+                <th>Acties</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for lesson in lessons %}
+                {% if lesson.instructor == app.user and lesson.dateTime <= date('now') %}
+                    <tr>
+                        <td>{{ lesson.training.naam }}</td>
+                        <td>{{ lesson.dateTime ? lesson.dateTime|date('d F Y - H:i:s') : '' }}</td>
+                        <td>{{ lesson.location }}</td>
+                        <td>{{ lesson.maxUsers }}</td>
+                        <td>{{ lesson.registrations|length }}</td>
+                        <td>
+                            <a class="btn btn-sm btn-outline-primary"
+                               href="{{ path('medewerker_lesson_show', {'id': lesson.id}) }}">Bekijk</a>
+                            <a class="btn btn-sm btn-outline-primary"
+                               href="{{ path('medewerker_lesson_edit', {'id': lesson.id}) }}">Bewerk</a>
+                            <button class="btn btn-outline-danger btn-sm" id="remove_{{ lesson.id }}" data-toggle="collapse"
+                                    aria-expanded="false"
+                                    data-target="#lesson_{{ lesson.id }}" onclick="this.classList.add('invisible')"
+                            >Verwijder</button>
+                        </td>
+                    </tr>
+                    <tr class="collapse alert alert-warning" id="lesson_{{ lesson.id }}">
+                        <td colspan="4" class="text-center">
+                            Weet u zeker dat u deze les wilt verwijderen?
+                        </td>
+                        <td>
+                            <form class="float-left" method="post" action="{{ path('medewerker_lesson_delete', {'id': lesson.id}) }}">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ lesson.id) }}">
+                                <button class="btn btn-warning btn-sm">Verwijder</button>
+                            </form>
+                            <button class="btn btn-sm btn-info ml-2" data-target="#lesson_{{ lesson.id }}"
+                                    data-toggle="collapse"
+                                    onclick="document.getElementById('remove_'+{{ lesson.id }}).classList.remove('invisible')">
+                                Nee
+                            </button>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% else %}
+                <tr>
+                    <td colspan="5">Geen lessen gevonden</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('medewerker_lesson_new') }}">Les aanmaken</a>
     </div>
 {% endblock %}

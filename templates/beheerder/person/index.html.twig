@@ -3,64 +3,129 @@
 {% block title %}Person index{% endblock %}
 
 {% block content %}
-    <div class="card-body">
-        <h1>Overzicht personen</h1>
+</div>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Login</th>
-                <th>Voornaam</th>
-                <th>Tussenvoegsel</th>
-                <th>Achternaam</th>
-                <th>Postcode</th>
-                <th>Woonplaats</th>
-                <th>Acties</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for person in people %}
-                <tr>
-                    <td>{{ person.username }}</td>
-                    <td>{{ person.firstName }}</td>
-                    <td>{{ person.prePosition }}</td>
-                    <td>{{ person.lastName }}</td>
-                    <td>{{ person.postalCode }}</td>
-                    <td>{{ person.place }}</td>
-                    <td>
-                        <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_person_show', {'id': person.id}) }}">Details</a>
-                        <a class="btn btn-outline-primary btn-sm" href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>
-                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ person.id }}" data-toggle="collapse"
-                                aria-expanded="false"
-                                data-target="#person_{{ person.id }}" onclick="this.classList.add('invisible')"
-                        >Verwijder</button>
-                    </td>
-                </tr>
-                <tr class="collapse alert alert-warning" id="person_{{ person.id }}">
-                    <td colspan="6" class="text-center">
-                        Weet u zeker dat u deze persoon wilt verwijderen?
-                    </td>
-                    <td>
-                        <form class="float-left" method="post" action="{{ path('admin_person_delete', {'id': person.id}) }}">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ person.id) }}">
-                            <button class="btn btn-warning btn-sm">Verwijder</button>
-                        </form>
-                        <button class="btn btn-sm btn-info ml-2" data-target="#person_{{ person.id }}"
-                                data-toggle="collapse"
-                                onclick="document.getElementById('remove_'+{{ person.id }}).classList.remove('invisible')">
-                            Nee
-                        </button>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="16">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-        <a class="btn btn-outline-success btn-sm" href="{{ path('admin_person_new') }}">Nieuwe gebruiker</a>
+{% for person in people %}
+    <div class="container card p-0 my-3 shadow-sm">
+        <div class="card-body">
+            <div class="row">
+                <div class="mx-auto">
+                    <h3 class="display-4">{{ person.firstName }} {{ person.prePosition }} {{ person.lastName }} ({{ person.username }})</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Voornaam: {{ person.firstName }}
+                </div>
+                <div class="col-md-4">
+                    Tussenvoegsel: {{ person.prePosition }}
+                </div>
+                <div class="col-md-4">
+                    Achternaam: {{ person.lastName }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Postcode: {{ person.postalCode }}
+                </div>
+                <div class="col-md-4">
+                    Woonplaats: {{ person.place }}
+                </div>
+                <div class="col-md-4">Acties:<br>
+                    <a class="btn btn-outline-primary btn-sm"
+                       href="{{ path('admin_person_show', {'id': person.id}) }}">Details</a>
+                    <a class="btn btn-outline-primary btn-sm"
+                       href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>
+                    <button class="btn btn-outline-danger btn-sm" id="remove_{{ person.id }}" data-toggle="collapse"
+                            aria-expanded="false"
+                            data-target="#person_{{ person.id }}" onclick="this.classList.add('invisible')"
+                    >Verwijder
+                    </button>
+                </div>
+                <div class="collapse alert alert-warning row" id="person_{{ person.id }}">
+                    Weet u zeker dat u deze persoon wilt verwijderen?
+                    <form class="float-left" method="post"
+                          action="{{ path('admin_person_delete', {'id': person.id}) }}">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ person.id) }}">
+                        <button class="btn btn-warning btn-sm">Verwijder</button>
+                    </form>
+                    <button class="btn btn-sm btn-info ml-2" data-target="#person_{{ person.id }}"
+                            data-toggle="collapse"
+                            onclick="document.getElementById('remove_'+{{ person.id }}).classList.remove('invisible')">
+                        Nee
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-{% endblock %}
+{% endfor %}
+<div class="container text-center">
+    <a class="btn btn-success" href="{{ path('admin_person_new') }}">Nieuwe gebruiker</a>
+</div>
+
+
+    {#    <div class="card-body">#}
+    {#        <h1>Overzicht personen</h1>#}
+
+    {#        <table class="table">#}
+    {#            <thead>#}
+    {#            <tr>#}
+    {#                <th>Login</th>#}
+    {#                <th>Voornaam</th>#}
+    {#                <th>Tussenvoegsel</th>#}
+    {#                <th>Achternaam</th>#}
+    {#                <th>Postcode</th>#}
+    {#                <th>Woonplaats</th>#}
+    {#                <th>Acties</th>#}
+    {#            </tr>#}
+    {#            </thead>#}
+    {#            <tbody>#}
+    {#            {% for person in people %}#}
+    {#                <tr>#}
+    {#                    <td>{{ person.username }}</td>#}
+    {#                    <td>{{ person.firstName }}</td>#}
+    {#                    <td>{{ person.prePosition }}</td>#}
+    {#                    <td>{{ person.lastName }}</td>#}
+    {#                    <td>{{ person.postalCode }}</td>#}
+    {#                    <td>{{ person.place }}</td>#}
+    {#                    <td>#}
+    {#                        <a class="btn btn-outline-primary btn-sm"#}
+    {#                           href="{{ path('admin_person_show', {'id': person.id}) }}">Details</a>#}
+    {#                        <a class="btn btn-outline-primary btn-sm"#}
+    {#                           href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>#}
+    {#                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ person.id }}" data-toggle="collapse"#}
+    {#                                aria-expanded="false"#}
+    {#                                data-target="#person_{{ person.id }}" onclick="this.classList.add('invisible')"#}
+    {#                        >Verwijder#}
+    {#                        </button>#}
+    {#                    </td>#}
+    {#                </tr>#}
+    {#                <tr class="collapse alert alert-warning" id="person_{{ person.id }}">#}
+    {#                    <td colspan="6" class="text-center">#}
+    {#                        Weet u zeker dat u deze persoon wilt verwijderen?#}
+    {#                    </td>#}
+    {#                    <td>#}
+    {#                        <form class="float-left" method="post"#}
+    {#                              action="{{ path('admin_person_delete', {'id': person.id}) }}">#}
+    {#                            <input type="hidden" name="_method" value="DELETE">#}
+    {#                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ person.id) }}">#}
+    {#                            <button class="btn btn-warning btn-sm">Verwijder</button>#}
+    {#                        </form>#}
+    {#                        <button class="btn btn-sm btn-info ml-2" data-target="#person_{{ person.id }}"#}
+    {#                                data-toggle="collapse"#}
+    {#                                onclick="document.getElementById('remove_'+{{ person.id }}).classList.remove('invisible')">#}
+    {#                            Nee#}
+    {#                        </button>#}
+    {#                    </td>#}
+    {#                </tr>#}
+    {#            {% else %}#}
+    {#                <tr>#}
+    {#                    <td colspan="16">no records found</td>#}
+    {#                </tr>#}
+    {#            {% endfor %}#}
+    {#            </tbody>#}
+    {#        </table>#}
+
+<div>
+    {% endblock %}

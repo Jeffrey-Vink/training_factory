@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Controller;
+
 use App\Entity\Lesson;
+use App\Entity\Registration;
 use App\Entity\Training;
 use App\Entity\User;
 use App\Form\LessonType;
@@ -96,7 +99,7 @@ class MedewerkerController extends AbstractController
      */
     public function deleteLessonAction(Request $request, Lesson $lesson): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$lesson->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $lesson->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($lesson);
             $entityManager->flush();
@@ -111,5 +114,50 @@ class MedewerkerController extends AbstractController
     public function deleteLessonConfirmation(Request $request)
     {
         return addFlash('confirmRequest', 'Weet u zeker dat u dit wilt verwijderen?');
+    }
+
+    /**
+     * @Route("/registrations", name="registrations", methods={"GET"})
+     */
+    public function registrationsAction()
+    {
+        return $this->render('medewerker/registraties.html.twig', [
+            'registraties' => $this->getDoctrine()->getRepository(Registration::class)->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/registrations", name="registration_payment", methods={"POST"})
+     */
+    public function registrationPaymentAction(Request $request)
+    {
+        $registration = $this->getDoctrine()->getRepository(Registration::class)->find($request->request->get('customSwitch'));
+        if($registration->getPayment() == 0){
+            $registration->setPayment(1);
+        }
+        else{
+            $registration->setPayment(0);
+        }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->flush($registration);
+
+        return $this->redirectToRoute('medewerker_registrations');
+    }
+
+    /**
+     * @Route("/registrations/search", name="registration_search")
+     */
+    public function registrationSearchAction(Request $request)
+    {
+        $registraties = $this->getDoctrine()->getRepository(Registration::class)->findBySearch($request->request->get('voornaam'), $request->request->get('tussenvoegsel'), $request->request->get('achternaam'));
+        dd($registraties);
+        if(sizeof($registraties)<1){
+            $registraties = $this->getDoctrine()->getRepository(Registration::class)->findAll();
+        }
+
+        return $this->render('medewerker/registraties.html.twig', [
+            'registraties' => $registraties,
+        ]);
     }
 }

@@ -60,6 +60,7 @@ class BezoekerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
             $user->setRoles(["ROLE_USER"]);
+            $user->setActive(true);
             $pass = $form->getData()->getPassword();
             $user->setPassword($passwordEncoder->encodePassword(
                 $user,

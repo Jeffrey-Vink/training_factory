@@ -2,12 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef0fd574-ceb9-47a7-9701-6467068a6da6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/css/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/header_img.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/medewerker/registraties.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/training_factory.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/training_factory.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/assets.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/assets.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/LessonType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LessonType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/admin/Trainingen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/admin/Trainingen.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BeheerderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BeheerderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/LessonRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/LessonRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/RegistrationRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/RegistrationRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/person/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/beheerder/training/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer/agenda.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/lesson/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +61,14 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -153,19 +190,25 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\training_factory\public\img" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -187,6 +230,8 @@
       <workItem from="1578658951361" duration="249000" />
       <workItem from="1578996801965" duration="7120000" />
       <workItem from="1580373842931" duration="2218000" />
+      <workItem from="1580415613987" duration="77000" />
+      <workItem from="1580415699456" duration="29732000" />
     </task>
     <servers />
   </component>

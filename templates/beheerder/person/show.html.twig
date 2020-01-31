@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Person{% endblock %}
+{% set totaleOmzet = 0 %}
 
 {% block content %}
     <div class="card-body">
@@ -8,10 +8,6 @@
 
         <table class="table">
             <tbody>
-            <tr>
-                <th>ID</th>
-                <td>{{ person.id }}</td>
-            </tr>
             <tr>
                 <th>Login naam</th>
                 <td>{{ person.username }}</td>
@@ -30,7 +26,7 @@
             </tr>
             <tr>
                 <th>Geboortedatum</th>
-                <td>{{ person.dateOfBirth ? person.dateOfBirth|date('Y-m-d') : '' }}</td>
+                <td>{{ person.dateOfBirth ? person.dateOfBirth|date('d F Y') : '' }}</td>
             </tr>
             <tr>
                 <th>Geslacht</th>
@@ -41,12 +37,12 @@
                 <td>{{ person.emailAddress }}</td>
             </tr>
             <tr>
-                <th>Rollen</th>
+                <th>Rol</th>
                 <td>{{ person.roles ? person.roles|json_encode : '' }}</td>
             </tr>
             <tr>
-                <th>Hiring date</th>
-                <td>{{ person.hiringDate ? person.hiringDate|date('Y-m-d') : '' }}</td>
+                <th>Startdatum</th>
+                <td>{{ person.hiringDate ? person.hiringDate|date('d-m-Y') : '' }}</td>
             </tr>
             <tr>
                 <th>Salaris</th>
@@ -67,7 +63,17 @@
             </tbody>
         </table>
 
-        <a class="btn btn-outline-primary" href="{{ path('admin_lid_index') }}">Terug naar de lijst</a>
+        {% if person.roles == ["ROLE_INSTRUCTOR"] %}
+            {% for lesson in person.lessons %}
+                {% if lesson.dateTime|date('f') < date("f") %}
+                    {% set totaleOmzet = totaleOmzet + (lesson.registrations|length * lesson.training.costs) %}
+                {% endif %}
+            {% endfor %}
+            Omzet deze maand: &euro;{{ totaleOmzet }}
+            <hr>
+        {% endif %}
+
+        <a class="btn btn-outline-primary" href="{{ path('admin_lid_index') }}">Terug naar het overzicht</a>
 
         <a class="btn btn-info" href="{{ path('admin_person_edit', {'id': person.id}) }}">Bewerk</a>
 

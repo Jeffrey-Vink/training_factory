@@ -58,23 +58,24 @@ class UserType extends AbstractType
                 'label' => 'E-mail',
             ])
             ->add('hiringDate', DateType::class, [
-                'label' => '',
+                'label' => 'Startdatum',
+                'years' => range(date('Y'), date('Y') +1),
                 'required' => false,
             ])
             ->add('salary', NumberType::class, [
-                'label' => '',
+                'label' => 'Salaris',
                 'required' => false,
             ])
             ->add('street', TextType::class, [
-                'label' => '',
+                'label' => 'Straat + huisnummer',
                 'required' => false,
             ])
             ->add('postalCode', TextType::class, [
-                'label' => '',
+                'label' => 'Postcode',
                 'required' => false,
             ])
             ->add('place', TextType::class, [
-                'label' => '',
+                'label' => 'Woonplaats',
                 'required' => false,
             ])
         ;

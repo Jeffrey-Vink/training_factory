@@ -28,7 +28,6 @@ class LessonRepository extends ServiceEntityRepository
             ->andWhere('l.dateTime > CURRENT_DATE()')
             ->andWhere('l.dateTime < CURRENT_DATE()+7')
             ->orderBy('l.dateTime', 'DESC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
@@ -38,7 +37,7 @@ class LessonRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('l')
             ->andWhere('l.dateTime > CURRENT_DATE()-365')
-            ->orderBy('l.dateTime', 'DESC')
+            ->orderBy('l.dateTime', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()

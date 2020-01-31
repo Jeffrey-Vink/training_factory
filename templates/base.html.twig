@@ -2,23 +2,20 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
               crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
     {% endblock %}
 </head>
 <body class="bg-light">
 {% block body %}
     {% block header %}
-        <div class="container-fluid shadow-sm">
-            <div class="container" id="header">
-                <img src="{{ asset('img/logo.png') }}" alt="">
-                <span class="clearfix"></span>
-            </div>
-            <hr class="m-0 p-0">
-            <nav class="container navbar navbar-expand-lg navbar-light bg-light py-1">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navigatie">
+            <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,75 +25,86 @@
                         {% block nav %}
                             {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('homepage') }}">Home</a>
                                 </li>
 
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('training_aanbod') }}">Training aanbod</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('gedragsregels') }}">Gedragsregels</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('over_ons') }}">Locatie & contact</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('bezoeker_registreer') }}">Lid worden</a>
                                 </li>
                             {% endif %}
                             {% if is_granted('ROLE_USER') %}
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('lid_homepage') }}">Planning</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('lid_training_agenda') }}">Agenda</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('lid_profiel_edit') }}">Profiel</a>
                                 </li>
                             {% endif %}
                             {% if is_granted('ROLE_INSTRUCTOR') %}
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('medewerker_lesson_index') }}">Lessen</a>
+                                </li>
+                                <li class="nav-item mr-2">
+                                    <a class="nav-link mr-2 my-0"
+                                       href="{{ path('medewerker_registrations') }}">Registraties</a>
                                 </li>
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('admin_instructeur_index') }}">Instructeurs</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('admin_lid_index') }}">Leden</a>
                                 </li>
                                 <li class="nav-item mr-2">
-                                    <a class="nav-link btn btn-outline-primary mr-2 my-0 shadow-sm"
+                                    <a class="nav-link mr-2 my-0"
                                        href="{{ path('admin_training_index') }}">Trainingsvormen</a>
                                 </li>
                             {% endif %}
                         {% endblock %}
                     </ul>
-                    <div class="float-right">
+                    <div class="float-right text-light">
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             {% if app.user %}
-                                Ingelogd als: {{ app.user.username }} ({{ app.user.roles[0] }}), <a class="btn btn-outline-success"
-                                                                                 href="{{ path('app_logout') }}">Logout</a>
+                                Welkom {{ app.user.firstName }} {{ app.user.prePosition }} {{ app.user.lastName }} <a
+                                class="btn btn-outline-success"
+                                href="{{ path('app_logout') }}">Logout</a>
                             {% endif %}
                         {% else %}
                             <a href="{{ path('app_login') }}" class="btn btn-outline-success">Login</a>
                         {% endif %}
                     </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
+        <div class="container-fluid shadow py-5 header">
+            <div class="container py-5">
+                <img src="{{ asset('img/logo.png') }}" alt="">
+                <span class="clearfix"></span>
+            </div>
         </div>
     {% endblock %}
     <div class="container card p-0 my-3">
@@ -122,14 +130,16 @@
     </footer>
 {% endblock %}
 {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-            integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
             crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="{{ asset('js/menu.js') }}"></script>
 {% endblock %}
 </body>
 </html>

@@ -72,13 +72,19 @@ class LoginAuthenticator extends AbstractFormLoginAuthenticator
             // fail authentication with a custom error
             throw new CustomUserMessageAuthenticationException('Login Name could not be found.');
         }
+        elseif ($user){
+            return $user;
+        }
+        throw new CustomUserMessageAuthenticationException('Uw gebruikersnaam of wachtwoord is niet juist');
 
-        return $user;
     }
 
     public function checkCredentials($credentials, UserInterface $user)
     {
-        return true;
+        if ($credentials){
+            return true;
+        }
+        return false;
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)

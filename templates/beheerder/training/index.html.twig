@@ -1,67 +1,65 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Training index{% endblock %}
-
 {% block content %}
     <div class="container card-body">
-        <h1>Training index</h1>
+        <h1>Trainingen</h1>
 
-{#        <table class="table">#}
-{#            <thead>#}
-{#            <tr>#}
-{#                <th>Naam</th>#}
-{#                <th>Duur (minuten)</th>#}
-{#                <th>Kosten</th>#}
-{#                <th>Afbeelding</th>#}
-{#                <th>Acties</th>#}
-{#            </tr>#}
-{#            </thead>#}
-{#            <tbody>#}
-{#            {% for training in trainings %}#}
-{#                <tr>#}
-{#                    <td>{{ training.naam }}</td>#}
-{#                    <td>{{ training.duration }}</td>#}
-{#                    <td>{{ training.costs }}</td>#}
-{#                    <td>{{ training.imageFilename }}</td>#}
-{#                    <td>#}
-{#                        <a class="btn btn-sm btn-outline-primary"#}
-{#                           href="{{ path('admin_training_show', {'id': training.id}) }}">Bekijk</a>#}
-{#                        <a class="btn btn-sm btn-outline-primary"#}
-{#                           href="{{ path('admin_training_show', {'id': training.id}) }}">Bewerk</a>#}
-{#                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ training.id }}" data-toggle="collapse"#}
-{#                                aria-expanded="false"#}
-{#                                data-target="#training_{{ training.id }}" onclick="this.classList.add('invisible')"#}
-{#                        >Verwijder</button>#}
-{#                    </td>#}
-{#                </tr>#}
-{#                <tr class="collapse alert alert-warning" id="training_{{ training.id }}">#}
-{#                    <td colspan="4" class="text-center">#}
-{#                        Weet u zeker dat u deze training wilt verwijderen?#}
-{#                    </td>#}
-{#                    <td>#}
-{#                        <form class="float-left" method="post" action="{{ path('admin_training_delete', {'id': training.id}) }}">#}
-{#                            <input type="hidden" name="_method" value="DELETE">#}
-{#                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ training.id) }}">#}
-{#                            <button class="btn btn-warning btn-sm">Verwijder</button>#}
-{#                        </form>#}
-{#                        <button class="btn btn-sm btn-info ml-2" data-target="#training_{{ training.id }}"#}
-{#                                data-toggle="collapse"#}
-{#                                onclick="document.getElementById('remove_'+{{ training.id }}).classList.remove('invisible')">#}
-{#                            Nee#}
-{#                        </button>#}
-{#                    </td>#}
-{#                </tr>#}
-{#            {% else %}#}
-{#                <tr>#}
-{#                    <td colspan="7">Geen gegevens</td>#}
-{#                </tr>#}
-{#            {% endfor %}#}
-{#            </tbody>#}
-{#        </table>#}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Naam</th>
+                <th>Duur (minuten)</th>
+                <th>Kosten</th>
+                <th>Afbeelding</th>
+                <th>Acties</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for training in trainingen %}
+                <tr>
+                    <td>{{ training.naam }}</td>
+                    <td>{{ training.duration }}</td>
+                    <td>{{ training.costs }}</td>
+                    <td>{{ training.imageFilename }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-primary"
+                           href="{{ path('admin_training_show', {'id': training.id}) }}">Bekijk</a>
+                        <a class="btn btn-sm btn-outline-primary"
+                           href="{{ path('admin_training_show', {'id': training.id}) }}">Bewerk</a>
+                        <button class="btn btn-outline-danger btn-sm" id="remove_{{ training.id }}" data-toggle="collapse"
+                                aria-expanded="false"
+                                data-target="#training_{{ training.id }}" onclick="this.classList.add('invisible')"
+                        >Verwijder</button>
+                    </td>
+                </tr>
+                <tr class="collapse alert alert-warning" id="training_{{ training.id }}">
+                    <td colspan="4" class="text-center">
+                        Weet u zeker dat u deze training wilt verwijderen?
+                    </td>
+                    <td>
+                        <form class="float-left" method="post" action="{{ path('admin_training_delete', {'id': training.id}) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ training.id) }}">
+                            <button class="btn btn-warning btn-sm">Verwijder</button>
+                        </form>
+                        <button class="btn btn-sm btn-info ml-2" data-target="#training_{{ training.id }}"
+                                data-toggle="collapse"
+                                onclick="document.getElementById('remove_'+{{ training.id }}).classList.remove('invisible')">
+                            Nee
+                        </button>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Geen gegevens</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-        <div id="trainingen">
-            <Trainingen />
-        </div>
+{#        <div id="trainingen">#}
+{#            <Trainingen />#}
+{#        </div>#}
 
         <div id="details">
             <Training />

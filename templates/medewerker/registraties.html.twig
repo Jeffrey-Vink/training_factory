@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    {{ parent() }}
+
+{#    <div class="container card shadow-sm">#}
+{#        <form action="{{ path('medewerker_registration_search') }}" method="POST">#}
+{#            <div class="form-row">#}
+{#                <div class="col-md-3 my-1">#}
+{#                    <label>Voornaam</label>#}
+{#                    <input type="text" name="voornaam" class="form-control">#}
+{#                    <div class="valid-feedback">#}
+{#                        Looks good!#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-md-3 my-1">#}
+{#                    <label>Tussenvoegsel</label>#}
+{#                    <input type="text" name="tussenvoegsel" class="form-control">#}
+{#                    <div class="valid-feedback">#}
+{#                        Looks good!#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-md-3 my-1">#}
+{#                    <label>Achternaam</label>#}
+{#                    <input type="text" name="achternaam" class="form-control">#}
+{#                    <div class="valid-feedback">#}
+{#                        Looks good!#}
+{#                    </div>#}
+{#                </div>#}
+{#                <button class="btn btn-primary col-md-3" type="submit">Zoek</button>#}
+{#            </div>#}
+{#        </form>#}
+{#    </div>#}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Les</th>
+            <th>Datum en tijd</th>
+            <th>Lid</th>
+            <th>Betaald</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for registratie in registraties %}
+            <tr>
+                <td>{{ registratie.lesson.training.naam }}</td>
+                <td>{{ registratie.lesson.dateTime|date('d F Y - H:i') }}</td>
+                <td>{{ registratie.member.firstName }} {{ registratie.member.prePosition }} {{ registratie.member.lastName }}</td>
+                <td>
+                    <form method="POST">
+                        <div class="custom-control custom-switch">
+                            <input name="customSwitch" value="{{ registratie.id }}"
+                                {% if registratie.payment == 1 %}
+                                    type="checkbox" checked disabled
+                                {% else %}
+                                    type="submit"
+                                {% endif %}
+                                   class="custom-control-input" id="customSwitch-{{ registratie.id }}">
+                            <label class="custom-control-label" for="customSwitch-{{ registratie.id }}"></label>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

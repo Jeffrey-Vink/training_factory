@@ -1,0 +1,22 @@
+.shrink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: ease-in-out;
+    transition-duration: 0.5s;
+    background-color: #212529;
+}
+.header{
+    background-image:url('../img/header_img.jpg');
+    text-align: left;
+    color: #fff;
+
+    min-height: 100%;
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

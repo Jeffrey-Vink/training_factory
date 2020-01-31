@@ -1,13 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Person{% endblock %}
-
 {% block content %}
     <div class="card-body">
-        <h1>Create new Person</h1>
+        <h1>Gebruiker aanmaken</h1>
 
         {{ include('beheerder/person/_form.html.twig') }}
 
-        <a href="{{ path('admin_lid_index') }}">back to list</a>
+        <a href="{{ path('admin_lid_index') }}">Terug naar het overzicht</a>
     </div>
 {% endblock %}

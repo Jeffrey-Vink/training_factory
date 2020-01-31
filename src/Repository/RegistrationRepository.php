@@ -19,22 +19,24 @@ class RegistrationRepository extends ServiceEntityRepository
         parent::__construct($registry, Registration::class);
     }
 
-    // /**
-    //  * @return Registration[] Returns an array of Registration objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+//    /**
+//    * @return Registration[] Returns an array of Registration objects
+//    */
+//    public function findBySearch($value, $value2, $value3)
+//    {
+//        return $this->createQueryBuilder('r')
+//            ->orWhere('r.member.firstName LIKE :val')
+//            ->orWhere('r.member.prePosition LIKE :val2')
+//            ->orWhere('r.member.lastName = :val3')
+//            ->setParameter('val', '%'.$value.'%')
+//            ->setParameter('val2', '%'.$value2.'%')
+//            ->setParameter('val3', '%'.$value3.'%')
+//            ->orderBy('r.id', 'ASC')
+//            ->getQuery()
+//            ->getResult()
+//        ;
+//    }
+
 
     /*
     public function findOneBySomeField($value): ?Registration
